@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
-import com.jojodmo.customitems.api.CustomItemsAPI;
 
 import poyrazinan.com.tr.tuccar.Tuccar;
 import poyrazinan.com.tr.tuccar.Utils.Storage.ProductStorage;
@@ -26,15 +25,7 @@ public class BuyItem {
 		boolean isCustom = false;
 		
 		isCustom = Tuccar.instance.getConfig().isSet("Tuccar." + product.getItemCategory() + ".items." + product.getDataName() + ".customitem");
-		
-		if (isCustom)
-		{
-			
-			String custom_data = Tuccar.instance.getConfig().getString("Tuccar." + product.getItemCategory() + ".items." + product.getDataName() + ".customitem");
-			
-			return CustomItemsAPI.getCustomItem(custom_data);
-			
-		}
+
 		
 		List<String> newList = new ArrayList<String>();
 		if (product.getLore() != null) {

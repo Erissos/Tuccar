@@ -2,6 +2,7 @@ package poyrazinan.com.tr.tuccar.listeners;
 
 import java.util.List;
 
+import net.citizensnpcs.api.event.NPCRightClickEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,7 +10,7 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import net.citizensnpcs.api.event.NPCRightClickEvent;
+
 import poyrazinan.com.tr.tuccar.Tuccar;
 import poyrazinan.com.tr.tuccar.Utils.getLang;
 import poyrazinan.com.tr.tuccar.Utils.Storage.ProductStorage;

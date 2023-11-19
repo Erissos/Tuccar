@@ -14,7 +14,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
-import com.jojodmo.customitems.api.CustomItemsAPI;
 
 import poyrazinan.com.tr.tuccar.Tuccar;
 import poyrazinan.com.tr.tuccar.Utils.Item;
@@ -56,13 +55,7 @@ public class PlayerProducts {
 				  		if (pageCount > (itemCount-1)-(startingValue-28)) break;
 				  		ItemStack guiItem = new ItemStack(Material.getMaterial(list.get(b).getItemMaterial().toUpperCase()));
 				  		if (guiItem.getType() == null || guiItem.getType() == Material.AIR) continue;
-				  		
-				  		boolean isCustom = Tuccar.instance.getConfig().isSet("Tuccar." + list.get(b).getItemCategory() + ".items." + list.get(b).getDataName() + ".customitem");
-				  		
-				  		if (isCustom)
-				  			guiItem = CustomItemsAPI.getCustomItem(
-				  					Tuccar.instance.getConfig().getString("Tuccar." + list.get(b).getItemCategory() + ".items." + list.get(b).getDataName() + ".customitem"));
-				  		
+
 				  		List<String> newList = new ArrayList<String>();
 				  		String nms = Tuccar.getNMSVersion();
 						if (nms.contains("1_16") || nms.contains("1_15") || nms.contains("1_14") || nms.contains("1_13")) {
@@ -71,7 +64,7 @@ public class PlayerProducts {
 									&& (Tuccar.instance.getConfig().isSet("Tuccar." + list.get(b).getItemCategory() + ".items." + list.get(b).getDataName() + ".potionType")) ) {
 								PotionType type = null;
 								try {type = PotionType.valueOf(Tuccar.instance.getConfig().getString("Tuccar." + list.get(b).getItemCategory() + ".items." + list.get(b).getDataName() + ".potionType"));
-								} catch (NullPointerException e1) {Bukkit.getConsoleSender().sendMessage(Tuccar.color("&4&lHATA &bTüccar materyal yanlış bulundu geçiliyor... &c" + 
+								} catch (NullPointerException e1) {Bukkit.getConsoleSender().sendMessage(Tuccar.color("&4&lHATA &bTüccar materyal yanlış bulundu geçiliyor... &c" +
 										list.get(b).getItemCategory() + ">" + list.get(b).getDataName())); continue;}
 								Potion potion = null;
 								if (list.get(b).getItemDamage() == 1 || list.get(b).getItemDamage() == 2)potion = new Potion(type, list.get(b).getItemDamage());
@@ -101,7 +94,7 @@ public class PlayerProducts {
 				    	if (list.get(b).getDisplayLore() != null) for (String string : list.get(b).getDisplayLore()) {
 				    		newList.add(Tuccar.color(string));}
 				    	meta.setLore(newList);
-				    	if (list.get(b).getItemDisplayName() != null && !isCustom) meta.setDisplayName(Tuccar.color(list.get(b).getItemDisplayName()));
+				    	if (list.get(b).getItemDisplayName() != null) meta.setDisplayName(Tuccar.color(list.get(b).getItemDisplayName()));
 				    	
 				    	if (list.get(b).getItemDamage() != 0) guiItem.setDurability((short) list.get(b).getItemDamage());
 				    	

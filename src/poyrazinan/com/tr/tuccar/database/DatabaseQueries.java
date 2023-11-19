@@ -11,7 +11,6 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 
-import com.jojodmo.customitems.api.CustomItemsAPI;
 
 import poyrazinan.com.tr.tuccar.Tuccar;
 import poyrazinan.com.tr.tuccar.Utils.Storage.ItemExistCheck;
@@ -216,18 +215,6 @@ public class DatabaseQueries {
             	String category = resultSet.getString("category");
             	
             	if (!Tuccar.instance.getConfig().isSet("Tuccar." + category + ".items." + product)) continue;
-            	
-            	if (Tuccar.instance.getConfig().isSet("Tuccar." + category + ".items." + product + ".customitem"))
-            	{
-            		ItemStack item = CustomItemsAPI.getCustomItem(
-		  					Tuccar.instance.getConfig().getString("Tuccar." + category + ".items." + product + ".customitem"));
-            		storage.add(new ProductStorage(product, item.getType().name(), category, 
-            				null, 
-            				"", 
-            				new ArrayList<String>(),
-            				new ArrayList<String>(), 0, stock, price, seller, id , null));
-            		continue;
-            	}
             	
             	String displayName = Tuccar.instance.getConfig().getString("Tuccar." + category + ".items." + product + ".displayName");
             	String material = Tuccar.instance.getConfig().getString("Tuccar." + category + ".items." + product + ".material");

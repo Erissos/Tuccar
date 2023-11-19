@@ -5,13 +5,11 @@ import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
 
-import com.jojodmo.customitems.api.CustomItemsAPI;
 
 import poyrazinan.com.tr.tuccar.Tuccar;
 import poyrazinan.com.tr.tuccar.Utils.Storage.ProductCategoryStorage;
@@ -31,19 +29,6 @@ public class TuccarAPI {
 		String itemName = null;
 		
 		final boolean hasCUI = Bukkit.getPluginManager().getPlugin("CustomItems") != null;
-		
-		if (hasCUI && Tuccar.instance.getConfig().isSet("Tuccar." + category + ".items." + name + ".customitem"))
-		{
-			
-			String customItem = Tuccar.instance.getConfig().getString("Tuccar." + category + ".items." + name + ".customitem");
-			
-			ItemStack CItem = CustomItemsAPI.getCustomItem(customItem);
-			
-			return new ProductCategoryStorage(name, 
-					CItem.getType().name().toLowerCase(), category, CItem.getItemMeta().getDisplayName(), 
-					CItem.getItemMeta().getDisplayName(), CItem.getItemMeta().getLore(), (int) CItem.getDurability());
-			
-		}
 		
 		if (Tuccar.instance.getConfig().isSet("Tuccar." + category + ".items." + name + ".itemName")) 
 			itemName = Tuccar.instance.getConfig().getString("Tuccar." + category + ".items." + name + ".itemName");
@@ -85,23 +70,7 @@ public class TuccarAPI {
 		}
 		
 		final boolean hasCUI = Bukkit.getPluginManager().getPlugin("CustomItems") != null;
-		
-		if (hasCUI && Tuccar.instance.getConfig().isSet("Tuccar." + product.getItemCategory() + ".items." + product.getDataName() + ".customitem"))
-		{
-			
-			String customItem = Tuccar.instance.getConfig().getString("Tuccar." + product.getItemCategory() + ".items." + product.getDataName() + ".customitem");
-			
-			ItemStack CItem = CustomItemsAPI.getCustomItem(customItem);
-			
-			CItem.setAmount(amount);
-			
-			ItemMeta meta = CItem.getItemMeta().clone();
-			
-			meta.addItemFlags(ItemFlag.values());
-			
-			CItem.setItemMeta(meta);
-			
-		}
+
 		
     	ItemStack item = new ItemStack(Material.getMaterial(product.getItemMaterial().toUpperCase()), amount);
     	

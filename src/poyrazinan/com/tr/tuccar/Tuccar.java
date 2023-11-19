@@ -16,11 +16,9 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
-import com.jojodmo.customitems.api.CustomItemsAPI;
 
 import net.md_5.bungee.api.ChatColor;
 import net.milkbowl.vault.economy.Economy;
-import poyrazinan.com.tr.tuccar.Utils.Item;
 import poyrazinan.com.tr.tuccar.Utils.getLang;
 import poyrazinan.com.tr.tuccar.Utils.Storage.CategoryStorage;
 import poyrazinan.com.tr.tuccar.Utils.Storage.CustomItemCache;
@@ -63,18 +61,6 @@ public class Tuccar extends JavaPlugin {
 			public void run() {
 
 				String nms = getNMSVersion();
-				if (nms.contains("1_16") || nms.contains("1_15") || nms.contains("1_14") || nms.contains("1_13")) {
-
-					Bukkit.getConsoleSender()
-							.sendMessage(Tuccar.color(" &6Tüccar &8▸ &aEğer yüksek sürüm configini çıkarmadıysanız."));
-
-					Bukkit.getConsoleSender().sendMessage(
-							Tuccar.color(" &6Tüccar &8▸ &aEklentiyi winrar ile açıp 1.16-config.yml'yi dizine atıp,"));
-
-					Bukkit.getConsoleSender()
-							.sendMessage(Tuccar.color(" &6Tüccar &8▸ &aAdını config.yml olarak değiştirin."));
-
-				}
 
 				Set<String> categories = Tuccar.instance.getConfig().getConfigurationSection("Tuccar").getKeys(false);
 				for (String s : categories) {
@@ -89,29 +75,6 @@ public class Tuccar extends JavaPlugin {
 					for (String d : products) {
 
 						try {
-
-							final boolean hasCUI = Bukkit.getPluginManager().getPlugin("CustomItems") != null;
-
-							if (hasCUI && Tuccar.instance.getConfig()
-									.isSet("Tuccar." + s + ".items." + d + ".customitem")) {
-
-								String customItem = Tuccar.instance.getConfig()
-										.getString("Tuccar." + s + ".items." + d + ".customitem");
-
-								ItemStack CItem = CustomItemsAPI.getCustomItem(customItem);
-
-								ProductCategoryStorage productStorage = new ProductCategoryStorage(d,
-										CItem.getType().name().toLowerCase(), s, CItem.getItemMeta().getDisplayName(),
-										CItem.getItemMeta().getDisplayName(), CItem.getItemMeta().getLore(),
-										(int) CItem.getDurability());
-
-								itemToObject.put(CItem, productStorage);
-								productInfo.put(d, DatabaseQueries.getProductInfos(d, s));
-								allStore.add(productStorage);
-
-								continue;
-
-							}
 
 							String itemMaterial = Tuccar.instance.getConfig()
 									.getString("Tuccar." + s + ".items." + d + ".material");
@@ -222,30 +185,6 @@ public class Tuccar extends JavaPlugin {
 					productCategory.put(s, allStore);
 				}
 
-				if (getLang.isSet("Gui.custom")) {
-
-					List<String> customList = new ArrayList<String>(
-							getLang.getConfigurationSection("lang", "Gui.custom"));
-
-					for (String data : customList) {
-
-						String name = getLang.getText("Gui.custom." + data + ".name");
-
-						int slot = getLang.getInt("Gui.custom." + data + ".slot");
-
-						List<String> lore = getLang.getLore("Gui.custom." + data + ".lore");
-
-						List<String> commands = getLang.getLore("Gui.custom." + data + ".commands");
-
-						Material mat = Material.getMaterial(getLang.getText("Gui.custom." + data + ".material"));
-
-						ItemStack customItem = Item.defaultItem(name, lore, mat);
-
-						customItems.put(slot, new CustomItemCache(customItem, commands));
-
-					}
-
-				}
 
 			}
 		});
