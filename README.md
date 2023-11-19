@@ -1,9 +1,10 @@
-> `Eklenti artık geliştirilmemektedir.`
+Yapımcı: https://github.com/poyrazinan
+  Discord: geik
+Düzenleyen: Ben (Eklentide hoşuma gitmeyen kısımlar bulunuyordu. Kendime göre düzenledim, diğer insanların da işine yarayabileceğinden paylaşıyorum.)
+  Discord: erisos
 
-> `1.13 ve üzeri bir sürümde kullanıyorsanız .jar dosyasını winrar ile açıp 1.16 config dosyasını mevcut config dosyasıyla değiştirin!`
+> `1.20+`
 
-![Usage](img/usage.png)
-### [Click for live usage](https://bstats.org/plugin/bukkit/Tuccar/10085)
 
 # Tuccar
 
@@ -16,1814 +17,1951 @@ Görevli bir NPC ile çalışan bu eklenti oyuncuların kendi eşyalarını diğ
 ## Config ve Dil dosyası
 <details>
   <summary>config.yml</summary>
-
     Settings:
-    # SHIFT + SOL tık ile alınacak adet sayısıdır.
-    customBuyAmount: 32
-    # Minimum listelenecek satış fiyatı
-    minimumPrice: 1
-    # Tüccar komut ile açılabilsin mi? /tüccar
-    openTuccarViaCmd: false
-    # Kategori seçme menüsünün büyüklüğünü belirler
-    categorySize: 36
-    # Orta tuş ile fiyat güncelleme ayarı.
-    middleClickRePrice: true
-    # Tüccarın kullanılabileceği dünyaları belirler.
-    world:
-        # Dünya beyaz listesi aktif edilsin mi?
-        worldWhitelist: true
-        # Dünya beyaz listesi aktifse hangi dünyalarda çalışsın.
-        allowedWorlds:
-        - world
-    Tax:
-    # Alınan vergi bir hesaba yatırılsın mı?
-    depositAccount: false
-    # Vergi bir hesaba yatırılıyorsa hangi hesap?
-    account: Geyik
-    # Vergi oranı % kaçtır? 0 yazarak devre dışı bırakabilirsiniz.
-    taxRate: 0
-    # Ana tüccar bloğudur. Blok ile başlayan kısım kategoridir.
-    # Özel kategori oluşturmak için onun gibi yeni bir isim yazabilirsiniz.
-    # Aşağıda belirli bilgiler mevcuttur:
-    # KATEGORİLER #
-    # displayName: Kategorinin görünen adıdır. (Zorunlu)
-    # displayLore: Kategorinin görünen açıklamasıdır. (Zorunlu)
-    # slot: Kategorinin olması gereken slotudur. (Zorunlu)
-    # material: Kategorinin materyalidir. (Zorunlu)
-    #
-    # ÜRÜNLER #
-    # displayName: Eşyanın tüccar guisi üzerinde gözükeceği isim (silinebilir)
-    # displayLore: Eşyanın tüccar guisi üzerinde gözükecek açıklaması (silinebilir)
-    # itemName: Eşyanın listelenebilmesi için gerekli olan ismidir. Örneğin: itemName: "&6Uçuş Kağıdı" (silinebilir)
-    # damage: Eşyanın hasarıdır. 1.8 ve 1.12 arasında geçerlidir. (silinebilir.)
-    # material: Eşyanın materyalidir. (Zorunlu)
-    # enchantment: Eşyanın tüccara konması için gerekli enchantlardır. Örnek: (silinebilir)
-    # enchantment:
-    # - "DAMAGE_ALL:5"
-    Tuccar:
-    Blok:
-        slot: 12
-        displayName: '&6Bloklar'
-        material: GRASS
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &eblokları &7inceleyebilir'
-        - ' &7ve satın alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        1: #Birbirinden farklı sayısal değerler girmelisiniz!
-            material: ICE
-            displayName: '&eBuz'
-        2:
-            material: PACKED_ICE
-            displayName: '&ePaketlenmiş Buz'
-        3:
-            material: MOSSY_COBBLESTONE
-            displayName: '&eYosunlu Taş'
-        4:
-            material: BRICK
-            displayName: '&eTuğla'
-        5:
-            material: BOOKSHELF
-            displayName: '&eKitaplık'
-        6:
-            material: WOOD
-            damage: 0
-            displayName: '&eMeşe Tahtası'
-        7:
-            material: WOOD
-            damage: 1
-            displayName: '&eLadin Tahtası'
-        8:
-            material: WOOD
-            damage: 2
-            displayName: '&eHuş Tahtası'
-        9:
-            material: WOOD
-            damage: 3
-            displayName: '&eOrman Tahtası'
-        10:
-            material: WOOD
-            damage: 4
-            displayName: '&eAkasya Tahtası'
-        11:
-            material: WOOD
-            damage: 5
-            displayName: '&eKoyu Meşe Tahtası'
-        12:
-            material: LOG
-            damage: 0
-            displayName: '&eMeşe OdunU'
-        13:
-            material: LOG
-            damage: 1
-            displayName: '&eLadin Odunu'
-        14:
-            material: LOG
-            damage: 2
-            displayName: '&eHuş Odunu'
-        15:
-            material: LOG
-            damage: 3
-            displayName: '&eOrman Odunu'
-        16:
-            material: LOG_2
-            damage: 0
-            displayName: '&eAkasya Odunu'
-        17:
-            material: LOG_2
-            damage: 1
-            displayName: '&eKoyu Meşe Odunu'
-        18:
-            material: SPONGE
-            displayName: '&eSünger'
-        19:
-            material: PRISMARINE
-            damage: 0
-            displayName: '&ePrizmarin'
-        20:
-            material: PRISMARINE
-            damage: 1
-            displayName: '&ePrizmarin Tuğlası'
-        21:
-            material: PRISMARINE
-            damage: 2
-            displayName: '&eKoyu Prizmarin'
-        22:
-            material: COAL_BLOCK
-            displayName: '&eKömür Bloğu'
-        23:
-            material: OBSIDIAN
-            displayName: '&eObsidyen'
-        23:
-            material: PUMPKIN
-            displayName: '&eBalkabagi'
-        24:
-            material: LAPIS_BLOCK
-            displayName: '&eLapis Blok'
-        25:
-            material: SEA_LANTERN
-            displayName: '&eDeniz Feneri'
-        26:
-            material: GLOWSTONE
-            displayName: '&eIşıktaşı'
-        27:
-            material: SOUL_SAND
-            displayName: '&eRuh Kumu'
-        28:
-            material: SNOW_BLOCK
-            displayName: '&eKar'
-        29:
-            material: QUARTZ_BLOCK
-            damage: 0
-            displayName: '&eKuvars Bloğu'
-        29:
-            material: QUARTZ_BLOCK
-            damage: 1
-            displayName: '&eKeskin Kuvars Bloğu'
-        30:
-            material: QUARTZ_BLOCK
-            damage: 2
-            displayName: '&eKuvars Sütun Bloğu'
-        31:
-            material: NETHER_BRICK
-            displayName: '&eNether Tuğlası'
-        32:
-            material: NETHERRACK
-            displayName: '&eNetherrack'
-        33:
-            material: SMOOTH_BRICK
-            displayName: '&eTaş Tuğla'
-        34:
-            material: MYCEL
-            displayName: '&eMiselyum'
-        35:
-            material: DIRT
-            displayName: '&eToprak'
-        36:
-            material: COBBLESTONE
-            displayName: '&eKırıktaş'
-        37:
-            material: SAND
-            displayName: '&eKum'
-        38:
-            material: SANDSTONE
-            displayName: '&eKumtaşı'
-        39:
-            material: ENDER_STONE
-            displayName: '&eEnd Taşı'
-        40:
-            material: CLAY
-            displayName: '&eKil'
-        41:
-            material: HARD_CLAY
-            displayName: '&eSertleştirilmiş Kil'
-        42:
-            material: STAINED_CLAY
-            damage: 0
-            displayName: '&eBeyaz Kil'
-        43:
-            material: STAINED_CLAY
-            damage: 1
-            displayName: '&eTuruncu Kil'
-        44:
-            material: STAINED_CLAY
-            damage: 2
-            displayName: '&eEflatun Kil'
-        45:
-            material: STAINED_CLAY
-            damage: 3
-            displayName: '&eAçık Mavi Kil'
-        46:
-            material: STAINED_CLAY
-            damage: 4
-            displayName: '&eSarı Kil'
-        47:
-            material: STAINED_CLAY
-            damage: 5
-            displayName: '&eAçık Yeşil Kil'
-        48:
-            material: STAINED_CLAY
-            damage: 6
-            displayName: '&ePembe Kil'
-        49:
-            material: STAINED_CLAY
-            damage: 7
-            displayName: '&eGri Kil'
-        50:
-            material: STAINED_CLAY
-            damage: 8
-            displayName: '&eAçık Gri Kil'
-        51:
-            material: STAINED_CLAY
-            damage: 9
-            displayName: '&eCamgöbeği Kil'
-        52:
-            material: STAINED_CLAY
-            damage: 10
-            displayName: '&eMor Kil'
-        53:
-            material: STAINED_CLAY
-            damage: 11
-            displayName: '&eMavi Kil'
-        54:
-            material: STAINED_CLAY
-            damage: 12
-            displayName: '&eKahverengi Kil'
-        55:
-            material: STAINED_CLAY
-            damage: 13
-            displayName: '&eYeşil Kil'
-        56:
-            material: STAINED_CLAY
-            damage: 14
-            displayName: '&eKırmızı Kil'
-        57:
-            material: STAINED_CLAY
-            damage: 15
-            displayName: '&eSiyah Kil'
-        58:
-            material: WOOL
-            damage: 0
-            displayName: '&eBeyaz Yün'
-        59:
-            material: WOOL
-            damage: 1
-            displayName: '&eTuruncu Yün'
-        60:
-            material: WOOL
-            damage: 2
-            displayName: '&eEflatun Yün'
-        61:
-            material: WOOL
-            damage: 3
-            displayName: '&eAçık Mavi Yün'
-        62:
-            material: WOOL
-            damage: 4
-            displayName: '&eSarı Yün'
-        63:
-            material: WOOL
-            damage: 5
-            displayName: '&eAçık Yeşil Yün'
-        64:
-            material: WOOL
-            damage: 6
-            displayName: '&ePembe Yün'
-        65:
-            material: WOOL
-            damage: 7
-            displayName: '&eGri Yün'
-        66:
-            material: WOOL
-            damage: 8
-            displayName: '&eAçık Gri Yün'
-        67:
-            material: WOOL
-            damage: 9
-            displayName: '&eCamgöbeği Yün'
-        68:
-            material: WOOL
-            damage: 10
-            displayName: '&eMor Yün'
-        69:
-            material: WOOL
-            damage: 11
-            displayName: '&eMavi Yün'
-        70:
-            material: WOOL
-            damage: 12
-            displayName: '&eKahverengi Yün'
-        71:
-            material: WOOL
-            damage: 13
-            displayName: '&eYeşil Yün'
-        72:
-            material: WOOL
-            damage: 14
-            displayName: '&eKırmızı Yün'
-        73:
-            material: WOOL
-            damage: 15
-            displayName: '&eSiyah Yün'
-        75:
-            material: GLASS
-            displayName: '&eCam'
-        76:
-            material: STAINED_GLASS
-            damage: 0
-            displayName: '&eBeyaz Cam'
-        77:
-            material: STAINED_GLASS
-            damage: 1
-            displayName: '&eTuruncu Cam'
-        78:
-            material: STAINED_GLASS
-            damage: 2
-            displayName: '&eEflatun Cam'
-        79:
-            material: STAINED_GLASS
-            damage: 3
-            displayName: '&eAçık Mavi Cam'
-        80:
-            material: STAINED_GLASS
-            damage: 4
-            displayName: '&eSarı Cam'
-        81:
-            material: STAINED_GLASS
-            damage: 5
-            displayName: '&eAçık Yeşil Cam'
-        82:
-            material: STAINED_GLASS
-            damage: 6
-            displayName: '&ePembe Cam'
-        83:
-            material: STAINED_GLASS
-            damage: 7
-            displayName: '&eGri Cam'
-        84:
-            material: STAINED_GLASS
-            damage: 8
-            displayName: '&eAçık Gri Cam'
-        85:
-            material: STAINED_GLASS
-            damage: 9
-            displayName: '&eCamgöbeği Cam'
-        86:
-            material: STAINED_GLASS
-            damage: 10
-            displayName: '&eMor Cam'
-        87:
-            material: STAINED_GLASS
-            damage: 11
-            displayName: '&eMavi Cam'
-        88:
-            material: STAINED_GLASS
-            damage: 12
-            displayName: '&eKahverengi Cam'
-        89:
-            material: STAINED_GLASS
-            damage: 13
-            displayName: '&eYeşil Cam'
-        90:
-            material: STAINED_GLASS
-            damage: 14
-            displayName: '&eKırmızı Cam'
-        91:
-            material: STAINED_GLASS
-            damage: 15
-            displayName: '&eSiyah Cam'
-    Dekor:
-        slot: 13
-        displayName: '&6Dekorasyon'
-        material: BANNER
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &edekorasyon ürünlerini'
-        - ' &7inceleyebilir ve satın'
-        - ' &7alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        92:
-            material: FENCE
-            displayName: '&eMeşe Çiti'
-        93:
-            material: SPRUCE_FENCE
-            displayName: '&eLadin Çiti'
-        94:
-            material: BIRCH_FENCE
-            displayName: '&eHuş Çiti'
-        95:
-            material: JUNGLE_FENCE
-            displayName: '&eOrman Çiti'
-        96:
-            material: ACACIA_FENCE
-            displayName: '&eAkasya Çiti'
-        97:
-            material: DARK_OAK_FENCE
-            displayName: '&eKoyu Meşe Çiti'
-        98:
-            material: COBBLE_WALL
-            damage: 0
-            displayName: '&eKırıktaş Duvar'
-        99:
-            material: COBBLE_WALL
-            damage: 1
-            displayName: '&eYosunlu Kırıktaş Duvar'
-        100:
-            material: IRON_FENCE
-            displayName: '&eDemir Parmaklık'
-        101:
-            material: FENCE_GATE
-            displayName: '&eMeşe Çit Kapısı'
-        102:
-            material: SPRUCE_FENCE_GATE
-            displayName: '&eLadin Çit Kapısı'
-        103:
-            material: BIRCH_FENCE_GATE
-            displayName: '&eHuş Çit Kapısı'
-        104:
-            material: JUNGLE_FENCE_GATE
-            displayName: '&eOrman Çit Kapısı'
-        105:
-            material: ACACIA_FENCE_GATE
-            displayName: '&eAkasya Çit Kapısı'
-        106:
-            material: DARK_OAK_FENCE_GATE
-            displayName: '&eKoyu Meşe Çit Kapısı'
-        107:
-            material: FLOWER_POT_ITEM
-            displayName: '&eSaksi'
-        108:
-            material: ARMOR_STAND
-            displayName: '&eZırh Askısı'
-        109:
-            material: PAINTING
-            displayName: '&eTablo'
-        110:
-            material: BANNER
-            damage: 0
-            displayName: '&eBeyaz Flama'
-        111:
-            material: BANNER
-            damage: 1
-            displayName: '&eTuruncu Flama'
-        112:
-            material: BANNER
-            damage: 2
-            displayName: '&eEflatun Flama'
-        113:
-            material: BANNER
-            damage: 3
-            displayName: '&eAçık Mavi Flama'
-        114:
-            material: BANNER
-            damage: 4
-            displayName: '&eSarı Flama'
-        115:
-            material: BANNER
-            damage: 5
-            displayName: '&eAçık Yeşil Flama'
-        116:
-            material: BANNER
-            damage: 6
-            displayName: '&ePembe Flama'
-        117:
-            material: BANNER
-            damage: 7
-            displayName: '&eGri Flama'
-        118:
-            material: BANNER
-            damage: 8
-            displayName: '&eAçık Gri Flama'
-        119:
-            material: BANNER
-            damage: 9
-            displayName: '&eCamgöbeği Flama'
-        120:
-            material: BANNER
-            damage: 10
-            displayName: '&eMor Flama'
-        121:
-            material: BANNER
-            damage: 11
-            displayName: '&eMavi Flama'
-        122:
-            material: BANNER
-            damage: 12
-            displayName: '&eKahverengi Flama'
-        123:
-            material: BANNER
-            damage: 13
-            displayName: '&eYeşil Flama'
-        124:
-            material: BANNER
-            damage: 14
-            displayName: '&eKırmızı Flama'
-        125:
-            material: BANNER
-            damage: 15
-            displayName: '&eSiyah Flama'
-        126:
-            material: THIN_GLASS
-            displayName: '&eInce Cam'
-        127:
-            material: STAINED_GLASS_PANE
-            damage: 0
-            displayName: '&eBeyaz Ince Cam'
-        128:
-            material: STAINED_GLASS_PANE
-            damage: 1
-            displayName: '&eTuruncu Ince Cam'
-        129:
-            material: STAINED_GLASS_PANE
-            damage: 2
-            displayName: '&eEflatun Ince Cam'
-        130:
-            material: STAINED_GLASS_PANE
-            damage: 3
-            displayName: '&eAçık Mavi Ince Cam'
-        131:
-            material: STAINED_GLASS_PANE
-            damage: 4
-            displayName: '&eSarı Ince Cam'
-        132:
-            material: STAINED_GLASS_PANE
-            damage: 5
-            displayName: '&eAçık Yeşil Ince Cam'
-        133:
-            material: STAINED_GLASS_PANE
-            damage: 6
-            displayName: '&ePembe Ince Cam'
-        134:
-            material: STAINED_GLASS_PANE
-            damage: 7
-            displayName: '&eGri Ince Cam'
-        135:
-            material: STAINED_GLASS_PANE
-            damage: 8
-            displayName: '&eAçık Gri Ince Cam'
-        136:
-            material: STAINED_GLASS_PANE
-            damage: 9
-            displayName: '&eCamgöbeği Ince Cam'
-        137:
-            material: STAINED_GLASS_PANE
-            damage: 10
-            displayName: '&eMor Ince Cam'
-        138:
-            material: STAINED_GLASS_PANE
-            damage: 11
-            displayName: '&eMavi Ince Cam'
-        139:
-            material: STAINED_GLASS_PANE
-            damage: 12
-            displayName: '&eKahverengi Ince Cam'
-        140:
-            material: STAINED_GLASS_PANE
-            damage: 13
-            displayName: '&eYeşil Ince Cam'
-        141:
-            material: STAINED_GLASS_PANE
-            damage: 14
-            displayName: '&eKırmızı Ince Cam'
-        142:
-            material: STAINED_GLASS_PANE
-            damage: 15
-            displayName: '&eSiyah Ince Cam'
-        143:
-            material: CARPET
-            damage: 0
-            displayName: '&eBeyaz Halı'
-        144:
-            material: CARPET
-            damage: 1
-            displayName: '&eTuruncu Halı'
-        145:
-            material: CARPET
-            damage: 2
-            displayName: '&eEflatun Halı'
-        146:
-            material: CARPET
-            damage: 3
-            displayName: '&eAçık Mavi Halı'
-        147:
-            material: CARPET
-            damage: 4
-            displayName: '&eSarı Halı'
-        148:
-            material: CARPET
-            damage: 5
-            displayName: '&eAçık Yeşil Halı'
-        149:
-            material: CARPET
-            damage: 6
-            displayName: '&ePembe Halı'
-        150:
-            material: CARPET
-            damage: 7
-            displayName: '&eGri Halı'
-        151:
-            material: CARPET
-            damage: 8
-            displayName: '&eAçık Gri Halı'
-        152:
-            material: CARPET
-            damage: 9
-            displayName: '&eCamgöbeği Halı'
-        153:
-            material: CARPET
-            damage: 10
-            displayName: '&eMor Halı'
-        154:
-            material: CARPET
-            damage: 11
-            displayName: '&eMavi Halı'
-        155:
-            material: CARPET
-            damage: 12
-            displayName: '&eKahverengi Halı'
-        156:
-            material: CARPET
-            damage: 13
-            displayName: '&eYeşil Halı'
-        157:
-            material: CARPET
-            damage: 14
-            displayName: '&eKırmızı Halı'
-        158:
-            material: CARPET
-            damage: 15
-            displayName: '&eSiyah Halı'
-    KızılT:
-        slot: 14
-        displayName: '&6Kızıltaş ve Ulaşım'
+  # SHIFT + SOL tık ile alınacak adet sayısıdır.
+  customBuyAmount: 32
+  # Minimum listelenecek satış fiyatı
+  minimumPrice: 1
+  # Tüccar komut ile açılabilsin mi? /tüccar
+  openTuccarViaCmd: false
+  # Kategori seçme menüsünün büyüklüğünü belirler
+  categorySize: 36
+  # Orta tuş ile fiyat güncelleme ayarı.
+  middleClickRePrice: true
+  # Tüccarın kullanılabileceği dünyaları belirler.
+  world:
+    # Dünya beyaz listesi aktif edilsin mi?
+    worldWhitelist: true
+    # Dünya beyaz listesi aktifse hangi dünyalarda çalışsın.
+    allowedWorlds:
+    - world
+Tax:
+  # Alınan vergi bir hesaba yatırılsın mı?
+  depositAccount: false
+  # Vergi bir hesaba yatırılıyorsa hangi hesap?
+  account: Geyik
+  # Vergi oranı % kaçtır? 0 yazarak devre dışı bırakabilirsiniz.
+  taxRate: 0
+
+# Ana tüccar bloğudur. Blok ile başlayan kısım kategoridir.
+# Özel kategori oluşturmak için onun gibi yeni bir isim yazabilirsiniz.
+# Aşağıda belirli bilgiler mevcuttur:
+
+# KATEGORİLER #
+# displayName: Kategorinin görünen adıdır. (Zorunlu)
+# displayLore: Kategorinin görünen açıklamasıdır. (Zorunlu)
+# slot: Kategorinin olması gereken slotudur. (Zorunlu)
+# material: Kategorinin materyalidir. (Zorunlu)
+#
+# ÜRÜNLER #
+# displayName: Eşyanın tüccar guisi üzerinde gözükeceği isim (silinebilir)
+# displayLore: Eşyanın tüccar guisi üzerinde gözükecek açıklaması (silinebilir)
+# itemName: Eşyanın listelenebilmesi için gerekli olan ismidir. Örneğin: itemName: "&6Uçuş Kağıdı" (silinebilir)
+# damage: Eşyanın hasarıdır. 1.8 ve 1.12 arasında geçerlidir. (silinebilir.)
+# material: Eşyanın materyalidir. (Zorunlu)
+# enchantment: Eşyanın tüccara konması için gerekli enchantlardır. Örnek: (silinebilir)
+# enchantment:
+# - "DAMAGE_ALL:5"
+Tuccar:
+  Blok:
+    slot: 12
+    displayName: '&6Bloklar'
+    material: GRASS_BLOCK
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &eblokları &7inceleyebilir'
+    - ' &7ve satın alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      Buz:
+        material: ICE
+        displayName: '&eBuz'
+      PaketBuz:
+        material: PACKED_ICE
+        displayName: '&ePaketlenmiş Buz'
+      YosunTas:
+        material: MOSSY_COBBLESTONE
+        displayName: '&eYosunlu Taş'
+      Tugla:
+        material: BRICKS
+        displayName: '&eTuğla'
+      Kitaplik:
+        material: BOOKSHELF
+        displayName: '&eKitaplık'
+      MeseTahta:
+        material: OAK_PLANKS
+        displayName: '&eMeşe Tahtası'
+      LadinTahta:
+        material: SPRUCE_PLANKS
+        displayName: '&eLadin Tahtası'
+      HusTahta:
+        material: BIRCH_PLANKS
+        displayName: '&eHuş Tahtası'
+      OrmanTahta:
+        material: JUNGLE_PLANKS
+        displayName: '&eOrman Tahtası'
+      AkasyaTahta:
+        material: ACACIA_PLANKS
+        displayName: '&eAkasya Tahtası'
+      KMeseTahta:
+        material: DARK_OAK_PLANKS
+        displayName: '&eKoyu Meşe Tahtası'
+      MeseKutuk:
+        material: OAK_LOG
+        displayName: '&eMeşe Kütüğü'
+      LadinKutuk:
+        material: SPRUCE_LOG
+        displayName: '&eLadin Kütüğü'
+      HusKutuk:
+        material: BIRCH_LOG
+        displayName: '&eHuş Kütüğü'
+      OrmanKutuk:
+        material: JUNGLE_LOG
+        displayName: '&eOrman Kütüğü'
+      AkasyaKutuk:
+        material: ACACIA_LOG
+        displayName: '&eAkasya Kütüğü'
+      KMeseKutuk:
+        material: DARK_OAK_LOG
+        displayName: '&eKoyu Meşe Kütüğü'
+      MeseOdun:
+        material: OAK_WOOD
+        displayName: '&eMeşe Odunu'
+      LadinOdun:
+        material: SPRUCE_WOOD
+        displayName: '&eLadin Odunu'
+      HusOdun:
+        material: BIRCH_WOOD
+        displayName: '&eHuş Odunu'
+      OrmanOdun:
+        material: JUNGLE_WOOD
+        displayName: '&eOrman Odunu'
+      AkasyaOdun:
+        material: ACACIA_WOOD
+        displayName: '&eAkasya Odunu'
+      KMeseOdun:
+        material: DARK_OAK_WOOD
+        displayName: '&eKoyu Meşe Odunu'
+      Sunger:
+        material: SPONGE
+        displayName: '&eSünger'
+      Prizmarin:
+        material: PRISMARINE
+        displayName: '&ePrizmarin'
+      PrizmarinT:
+        material: PRISMARINE_BRICKS
+        displayName: '&ePrizmarin Tuğlası'
+      KPrizmarin:
+        material: DARK_PRISMARINE
+        displayName: '&eKoyu Prizmarin'
+      KomurBlok:
+        material: COAL_BLOCK
+        displayName: '&eKömür Bloğu'
+      Obsidyen:
+        material: OBSIDIAN
+        displayName: '&eObsidyen'
+      Balkabagi:
+        material: PUMPKIN
+        displayName: '&eBalkabagi'
+      LapisBlok:
+        material: LAPIS_BLOCK
+        displayName: '&eLapis Blok'
+      DenizFeneri:
+        material: SEA_LANTERN
+        displayName: '&eDeniz Feneri'
+      IsikTasi:
+        material: GLOWSTONE
+        displayName: '&eIşıktaşı'
+      RuhKumu:
+        material: SOUL_SAND
+        displayName: '&eRuh Kumu'
+      KarBlok:
+        material: SNOW_BLOCK
+        displayName: '&eKar'
+      Kuvars1:
+        material: QUARTZ_BLOCK
+        displayName: '&eKuvars Bloğu'
+      Kuvars2:
+        material: SMOOTH_QUARTZ
+        displayName: '&eDüzgün Kuvars Bloğu'
+      Kuvars3:
+        material: CHISELED_QUARTZ_BLOCK
+        displayName: '&eOyma Kuvars Bloğu'
+      Kuvars4:
+        material: QUARTZ_BRICKS
+        displayName: '&eKuvars Tuğlası'
+      Kuvars5:
+        material: QUARTZ_PILLAR
+        displayName: '&eKuvars Sütun'
+      MagmaBlok:
+        material: MAGMA_BLOCK
+        displayName: '&eMagma Bloğu'
+      NetherTugla:
+        material: NETHER_BRICKS
+        displayName: '&eNether Tuğlası'
+      KNetherTugla:
+        material: RED_NETHER_BRICKS
+        displayName: '&eKırmızı Nether Tuğlası'
+      Netherrack:
+        material: NETHERRACK
+        displayName: '&eNetherrack'
+      TasTugla:
+        material: STONE_BRICKS
+        displayName: '&eTaş Tuğla'
+      Miselyum:
+        material: MYCELIUM
+        displayName: '&eMiselyum'
+      Toprak:
+        material: DIRT
+        displayName: '&eToprak'
+      Kiriktas:
+        material: COBBLESTONE
+        displayName: '&eKırıktaş'
+      Kum:
+        material: SAND
+        displayName: '&eKum'
+      Kumtasi:
+        material: SANDSTONE
+        displayName: '&eKumtaşı'
+      Kerpic:
+        material: PACKED_MUD
+        displayName: '&eKerpiç'
+      Endtasi:
+        material: END_STONE
+        displayName: '&eEnd Taşı'
+      Kil:
+        material: CLAY
+        displayName: '&eKil'
+      SertKil:
+        material: TERRACOTTA
+        displayName: '&eSertleştirilmiş Kil'
+      Kil1:
+        material: WHITE_TERRACOTTA
+        displayName: '&eBeyaz Kil'
+      Kil2:
+        material: ORANGE_TERRACOTTA
+        displayName: '&eTuruncu Kil'
+      Kil3:
+        material: MAGENTA_TERRACOTTA
+        displayName: '&eEflatun Kil'
+      Kil4:
+        material: LIGHT_BLUE_TERRACOTTA
+        displayName: '&eAçık Mavi Kil'
+      Kil5:
+        material: YELLOW_TERRACOTTA
+        displayName: '&eSarı Kil'
+      Kil6:
+        material: LIME_TERRACOTTA
+        displayName: '&eAçık Yeşil Kil'
+      Kil7:
+        material: PINK_TERRACOTTA
+        displayName: '&ePembe Kil'
+      Kil8:
+        material: GRAY_TERRACOTTA
+        displayName: '&eGri Kil'
+      Kil9:
+        material: LIGHT_GRAY_TERRACOTTA
+        displayName: '&eAçık Gri Kil'
+      Kil10:
+        material: CYAN_TERRACOTTA
+        displayName: '&eCamgöbeği Kil'
+      Kil11:
+        material: PURPLE_TERRACOTTA
+        displayName: '&eMor Kil'
+      Kil12:
+        material: BLUE_TERRACOTTA
+        displayName: '&eMavi Kil'
+      Kil13:
+        material: BROWN_TERRACOTTA
+        displayName: '&eKahverengi Kil'
+      Kil14:
+        material: GREEN_TERRACOTTA
+        displayName: '&eYeşil Kil'
+      Kil15:
+        material: RED_TERRACOTTA
+        displayName: '&eKırmızı Kil'
+      Kil16:
+        material: BLACK_TERRACOTTA
+        displayName: '&eSiyah Kil'
+      Yün1:
+        material: WHITE_WOOL
+        displayName: '&eBeyaz Yün'
+      Yün2:
+        material: ORANGE_WOOL
+        displayName: '&eTuruncu Yün'
+      Yün3:
+        material: MAGENTA_WOOL
+        displayName: '&eEflatun Yün'
+      Yün4:
+        material: LIGHT_BLUE_WOOL
+        displayName: '&eAçık Mavi Yün'
+      Yün5:
+        material: YELLOW_WOOL
+        displayName: '&eSarı Yün'
+      Yün6:
+        material: LIME_WOOL
+        displayName: '&eAçık Yeşil Yün'
+      Yün7:
+        material: PINK_WOOL
+        displayName: '&ePembe Yün'
+      Yün8:
+        material: GRAY_WOOL
+        displayName: '&eGri Yün'
+      Yün9:
+        material: LIGHT_GRAY_WOOL
+        displayName: '&eAçık Gri Yün'
+      Yün10:
+        material: CYAN_WOOL
+        displayName: '&eCamgöbeği Yün'
+      Yün11:
+        material: PURPLE_WOOL
+        displayName: '&eMor Yün'
+      Yün12:
+        material: BLUE_WOOL
+        displayName: '&eMavi Yün'
+      Yün13:
+        material: BROWN_WOOL
+        displayName: '&eKahverengi Yün'
+      Yün14:
+        material: GREEN_WOOL
+        displayName: '&eYeşil Yün'
+      Yün15:
+        material: RED_WOOL
+        displayName: '&eKırmızı Yün'
+      Yün16:
+        material: BLACK_WOOL
+        displayName: '&eSiyah Yün'
+      Cam:
+        material: GLASS
+        displayName: '&eCam'
+      Cam1:
+        material: WHITE_STAINED_GLASS
+        displayName: '&eBeyaz Cam'
+      Cam2:
+        material: ORANGE_STAINED_GLASS
+        displayName: '&eTuruncu Cam'
+      Cam3:
+        material: MAGENTA_STAINED_GLASS
+        displayName: '&eEflatun Cam'
+      Cam4:
+        material: LIGHT_BLUE_STAINED_GLASS
+        displayName: '&eAçık Mavi Cam'
+      Cam5:
+        material: YELLOW_STAINED_GLASS
+        displayName: '&eSarı Cam'
+      Cam6:
+        material: LIME_STAINED_GLASS
+        displayName: '&eAçık Yeşil Cam'
+      Cam7:
+        material: PINK_STAINED_GLASS
+        displayName: '&ePembe Cam'
+      Cam8:
+        material: GRAY_STAINED_GLASS
+        displayName: '&eGri Cam'
+      Cam9:
+        material: LIGHT_GRAY_STAINED_GLASS
+        displayName: '&eAçık Gri Cam'
+      Cam10:
+        material: CYAN_STAINED_GLASS
+        displayName: '&eCamgöbeği Cam'
+      Cam11:
+        material: PURPLE_STAINED_GLASS
+        displayName: '&eMor Cam'
+      Cam12:
+        material: BLUE_STAINED_GLASS
+        displayName: '&eMavi Cam'
+      Cam13:
+        material: BROWN_STAINED_GLASS
+        displayName: '&eKahverengi Cam'
+      Cam14:
+        material: GREEN_STAINED_GLASS
+        displayName: '&eYeşil Cam'
+      Cam15:
+        material: RED_STAINED_GLASS
+        displayName: '&eKırmızı Cam'
+      Cam16:
+        material: BLACK_STAINED_GLASS
+        displayName: '&eSiyah Cam'
+  Dekor:
+    slot: 13
+    displayName: '&6Dekorasyon'
+    material: BLACK_BANNER
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &edekorasyon ürünlerini'
+    - ' &7inceleyebilir ve satın'
+    - ' &7alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      EndCubuk:
+        material: END_ROD
+        displayName: '&eEnd Çubuğu'
+      Can:
+        material: BELL
+        displayName: '&eÇan'
+      Fener:
+        material: LANTERN
+        displayName: '&eFener'
+      KampAteşi:
+        material: CAMPFIRE
+        displayName: '&eKamp Ateşi'
+      MeseCiti:
+        material: OAK_FENCE
+        displayName: '&eMeşe Çiti'
+      LadinCiti:
+        material: SPRUCE_FENCE
+        displayName: '&eLadin Çiti'
+      HusCiti:
+        material: BIRCH_FENCE
+        displayName: '&eHuş Çiti'
+      OrmanCiti:
+        material: JUNGLE_FENCE
+        displayName: '&eOrman Çiti'
+      AkasyaCiti:
+        material: ACACIA_FENCE
+        displayName: '&eAkasya Çiti'
+      KMeseCiti:
+        material: DARK_OAK_FENCE
+        displayName: '&eKoyu Meşe Çiti'
+      KiriktaşD:
+        material: COBBLESTONE_WALL
+        displayName: '&eKırıktaş Duvar'
+      YKiriktaşD:
+        material: MOSSY_COBBLESTONE_WALL
+        displayName: '&eYosunlu Kırıktaş Duvar'
+      DemirCit:
+        material: IRON_BARS
+        displayName: '&eDemir Parmaklık'
+      MeseCitK:
+        material: OAK_FENCE_GATE
+        displayName: '&eMeşe Çit Kapısı'
+      LadinCitK:
+        material: SPRUCE_FENCE_GATE
+        displayName: '&eLadin Çit Kapısı'
+      HusCitK:
+        material: BIRCH_FENCE_GATE
+        displayName: '&eHuş Çit Kapısı'
+      OrmanCitK:
+        material: JUNGLE_FENCE_GATE
+        displayName: '&eOrman Çit Kapısı'
+      AkasyaCitK:
+        material: ACACIA_FENCE_GATE
+        displayName: '&eAkasya Çit Kapısı'
+      KMeseCitK:
+        material: DARK_OAK_FENCE_GATE
+        displayName: '&eKoyu Meşe Çit Kapısı'
+      Saksi:
+        material: FLOWER_POT
+        displayName: '&eSaksı'
+      ZirhAskisi:
+        material: ARMOR_STAND
+        displayName: '&eZırh Askısı'
+      Tablo:
+        material: PAINTING
+        displayName: '&eTablo'
+      Flama1:
+        material: WHITE_BANNER
+        displayName: '&eBeyaz Flama'
+      Flama2:
+        material: ORANGE_BANNER
+        displayName: '&eTuruncu Flama'
+      Flama3:
+        material: MAGENTA_BANNER
+        displayName: '&eEflatun Flama'
+      Flama4:
+        material: LIGHT_BLUE_BANNER
+        displayName: '&eAçık Mavi Flama'
+      Flama5:
+        material: YELLOW_BANNER
+        displayName: '&eSarı Flama'
+      Flama6:
+        material: LIME_BANNER
+        displayName: '&eAçık Yeşil Flama'
+      Flama7:
+        material: PINK_BANNER
+        displayName: '&ePembe Flama'
+      Flama8:
+        material: GRAY_BANNER
+        displayName: '&eGri Flama'
+      Flama9:
+        material: LIGHT_GRAY_BANNER
+        displayName: '&eAçık Gri Flama'
+      Flama10:
+        material: CYAN_BANNER
+        displayName: '&eCamgöbeği Flama'
+      Flama11:
+        material: PURPLE_BANNER
+        displayName: '&eMor Flama'
+      Flama12:
+        material: BLUE_BANNER
+        displayName: '&eMavi Flama'
+      Flama13:
+        material: BROWN_BANNER
+        displayName: '&eKahverengi Flama'
+      Flama14:
+        material: GREEN_BANNER
+        displayName: '&eYeşil Flama'
+      Flama15:
+        material: RED_BANNER
+        displayName: '&eKırmızı Flama'
+      Flama16:
+        material: BLACK_BANNER
+        displayName: '&eSiyah Flama'
+      InceCam:
+        material: GLASS_PANE
+        displayName: '&eCam'
+      InceCam1:
+        material: WHITE_STAINED_GLASS_PANE
+        displayName: '&eBeyaz Ince Cam'
+      InceCam2:
+        material: ORANGE_STAINED_GLASS_PANE
+        displayName: '&eTuruncu Ince Cam'
+      InceCam3:
+        material: MAGENTA_STAINED_GLASS_PANE
+        displayName: '&eEflatun Ince Cam'
+      InceCam4:
+        material: LIGHT_BLUE_STAINED_GLASS_PANE
+        displayName: '&eAçık Mavi Ince Cam'
+      InceCam5:
+        material: YELLOW_STAINED_GLASS_PANE
+        displayName: '&eSarı Ince Cam'
+      InceCam6:
+        material: LIME_STAINED_GLASS_PANE
+        displayName: '&eAçık Yeşil Ince Cam'
+      InceCam7:
+        material: PINK_STAINED_GLASS_PANE
+        displayName: '&ePembe Ince Cam'
+      InceCam8:
+        material: GRAY_STAINED_GLASS_PANE
+        displayName: '&eGri Ince Cam'
+      InceCam9:
+        material: LIGHT_GRAY_STAINED_GLASS_PANE
+        displayName: '&eAçık Gri Ince Cam'
+      InceCam10:
+        material: CYAN_STAINED_GLASS_PANE
+        displayName: '&eCamgöbeği Ince Cam'
+      InceCam11:
+        material: PURPLE_STAINED_GLASS_PANE
+        displayName: '&eMor Ince Cam'
+      InceCam12:
+        material: BLUE_STAINED_GLASS_PANE
+        displayName: '&eMavi Ince Cam'
+      InceCam13:
+        material: BROWN_STAINED_GLASS_PANE
+        displayName: '&eKahverengi Ince Cam'
+      InceCam14:
+        material: GREEN_STAINED_GLASS_PANE
+        displayName: '&eYeşil Ince Cam'
+      InceCam15:
+        material: RED_STAINED_GLASS_PANE
+        displayName: '&eKırmızı Ince Cam'
+      InceCam16:
+        material: BLACK_STAINED_GLASS_PANE
+        displayName: '&eSiyah Ince Cam'
+      Halı1:
+        material: WHITE_CARPET
+        displayName: '&eBeyaz Halı'
+      Halı2:
+        material: ORANGE_CARPET
+        displayName: '&eTuruncu Halı'
+      Halı3:
+        material: MAGENTA_CARPET
+        displayName: '&eEflatun Halı'
+      Halı4:
+        material: LIGHT_BLUE_CARPET
+        displayName: '&eAçık Mavi Halı'
+      Halı5:
+        material: YELLOW_CARPET
+        displayName: '&eSarı Halı'
+      Halı6:
+        material: LIME_CARPET
+        displayName: '&eAçık Yeşil Halı'
+      Halı7:
+        material: PINK_CARPET
+        displayName: '&ePembe Halı'
+      Halı8:
+        material: GRAY_CARPET
+        displayName: '&eGri Halı'
+      Halı9:
+        material: LIGHT_GRAY_CARPET
+        displayName: '&eAçık Gri Halı'
+      Halı10:
+        material: CYAN_CARPET
+        displayName: '&eCamgöbeği Halı'
+      Halı11:
+        material: PURPLE_CARPET
+        displayName: '&eMor Halı'
+      Halı12:
+        material: BLUE_CARPET
+        displayName: '&eMavi Halı'
+      Halı13:
+        material: BROWN_CARPET
+        displayName: '&eKahverengi Halı'
+      Halı14:
+        material: GREEN_CARPET
+        displayName: '&eYeşil Halı'
+      Halı15:
+        material: RED_CARPET
+        displayName: '&eKırmızı Halı'
+      Halı16:
+        material: BLACK_CARPET
+        displayName: '&eSiyah Halı'
+  KızılT:
+    slot: 14
+    displayName: '&6Kızıltaş ve Ulaşım'
+    material: REDSTONE
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &ekızıltaş ürünlerini'
+    - ' &7inceleyebilir ve satın'
+    - ' &7alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      Nota:
+        material: NOTE_BLOCK
+        displayName: '&eNota Bloğu'
+      Piston:
+        material: PISTON
+        displayName: '&ePiston'
+      Lamba:
+        material: REDSTONE_LAMP
+        displayName: '&eKızıltaş Lambası'
+      Sensor:
+        material: DAYLIGHT_DETECTOR
+        displayName: '&eGüneş Sensörü'
+      Kiziltas:
         material: REDSTONE
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &ekızıltaş ürünlerini'
-        - ' &7inceleyebilir ve satın'
-        - ' &7alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        159:
-            material: NOTE_BLOCK
-            displayName: '&eNota Bloğu'
-        160:
-            material: PISTON_BASE
-            displayName: '&ePiston'
-        161:
-            material: REDSTONE_LAMP_OFF
-            displayName: '&eKızıltaş Lambası'
-        162:
-            material: DAYLIGHT_DETECTOR
-            displayName: '&eGüneş Sensörü'
-        163:
-            material: REDSTONE
-            displayName: '&eKızıltaş'
-        164:
-            material: REDSTONE_BLOCK
-            displayName: '&eKızıltaş Bloğu'
-        165:
-            material: HOPPER
-            displayName: '&eHuni'
-        166:
-            material: DIODE
-            displayName: '&eKızıltaş Yineleyici'
-        167:
-            material: REDSTONE_COMPARATOR
-            displayName: '&eKızıltaş Karşılaştırıcı'
-        168:
-            material: WOOD_DOOR
-            displayName: '&eMeşe Kapı'
-        169:
-            material: IRON_DOOR
-            displayName: '&eDemir Kapı'
-        170:
-            material: SPRUCE_DOOR_ITEM
-            displayName: '&eLadin Kapı'
-        171:
-            material: BIRCH_DOOR_ITEM
-            displayName: '&eHuş Kapı'
-        172:
-            material: JUNGLE_DOOR_ITEM
-            displayName: '&eOrman Kapı'
-        173:
-            material: ACACIA_DOOR_ITEM
-            displayName: '&eAkasya Kapı'
-        174:
-            material: DARK_OAK_DOOR_ITEM
-            displayName: '&eKoyu Meşe Kapı'
-        175:
-            material: POWERED_RAIL
-            displayName: '&eGüçlendirilmiş Ray'
-        176:
-            material: DETECTOR_RAIL
-            displayName: '&eDedektör Ray'
-        177:
-            material: ACTIVATOR_RAIL
-            displayName: '&eAktivatör Ray'
-        178:
-            material: RAILS
-            displayName: '&eRay'
-        179:
-            material: MINECART
-            displayName: '&eMinecart'
-        180:
-            material: STORAGE_MINECART
-            displayName: '&eSandıklı Vagon'
-        181:
-            material: HOPPER_MINECART
-            displayName: '&eHunili Vagon'
-        182:
-            material: POWERED_MINECART
-            displayName: '&eFırınlı Vagon'
-        183:
-            material: DISPENSER
-            displayName: '&eFırlatıcı'
-        184:
-            material: DROPPER
-            displayName: '&eBırakıcı'
-        185:
-            material: SADDLE
-            displayName: '&eEyer'
-        186:
-            material: BOAT
-            displayName: '&eTekne'
-        187:
-            material: CARROT_STICK
-            displayName: '&eHavuçlu Olta'
-    Iksir:
-        slot: 15
-        displayName: '&6Iksir'
-        material: BREWING_STAND_ITEM
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &eiksirleri &7inceleyebilir'
-        - ' &7ve satın alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        188:
-            material: POTION
-            damage: 0
-            displayName: '&eSu Şişesi'
-        189:
-            material: GLASS_BOTTLE
-            displayName: '&eCam Şişe'
-        190:
-            material: GHAST_TEAR
-            displayName: '&eGhast Gözyaşı'
-        191:
-            material: FERMENTED_SPIDER_EYE
-            displayName: '&eMayalı Örümcek Gözü'
-        192:
-            material: BLAZE_POWDER
-            displayName: '&eBlaze Tozu'
-        193:
-            material: MAGMA_CREAM
-            displayName: '&eMagma Kremi'
-        194:
-            material: SPECKLED_MELON
-            displayName: '&eParlayan Karpuz'
-        195:
-            material: GOLDEN_CARROT
-            displayName: '&eAltın Havuç'
-        196:
-            material: RABBIT_FOOT
-            displayName: '&eTavşan Ayağı'
-        197:
-            material: SULPHUR
-            displayName: '&eBarut'
-        198:
-            material: GLOWSTONE_DUST
-            displayName: '&eIşıktaşı Tozu'
-        199:
-            material: SUGAR
-            displayName: '&eŞeker'
-        200:
-            material: BLAZE_ROD
-            displayName: '&eBlaze Çubuğu'
-        201:
-            material: NETHER_STALK
-            displayName: '&eNetherwart'
-        202:
-            material: BREWING_STAND_ITEM
-            displayName: '&eSimya Standı'
-        203:
-            material: CAULDRON_ITEM
-            displayName: '&eKazan'
-        204:
-            material: POTION
-            damage: 8193
-            displayName: '&eRejenerasyon Iksiri'
-        205:
-            material: POTION
-            damage: 8225
-            displayName: '&eRejenerasyon Iksiri'
-        206:
-            material: POTION
-            damage: 8257
-            displayName: '&eRejenerasyon Iksiri'
-        207:
-            material: POTION
-            damage: 8194
-            displayName: '&eÇeviklik Iksiri'
-        208:
-            material: POTION
-            damage: 8226
-            displayName: '&eÇeviklik Iksiri'
-        209:
-            material: POTION
-            damage: 8258
-            displayName: '&eÇeviklik Iksiri'
-        210:
-            material: POTION
-            damage: 8227
-            displayName: '&eAteş Direnci Iksiri'
-        211:
-            material: POTION
-            damage: 8259
-            displayName: '&eAteş Direnci Iksiri'
-        212:
-            material: POTION
-            damage: 8196
-            displayName: '&eZehir Iksiri'
-        213:
-            material: POTION
-            damage: 8228
-            displayName: '&eZehir Iksiri'
-        214:
-            material: POTION
-            damage: 8260
-            displayName: '&eZehir Iksiri'
-        215:
-            material: POTION
-            damage: 8261
-            displayName: '&eIyileştirme Iksiri'
-        216:
-            material: POTION
-            damage: 8229
-            displayName: '&eIyileştirme Iksiri'
-        217:
-            material: POTION
-            damage: 8230
-            displayName: '&eGece Görüşü Iksiri'
-        218:
-            material: POTION
-            damage: 8262
-            displayName: '&eGece Görüşü Iksiri'
-        219:
-            material: POTION
-            damage: 8232
-            displayName: '&eZayıflık Iksiri'
-        220:
-            material: POTION
-            damage: 8264
-            displayName: '&eZayıflık Iksiri'
-        221:
-            material: POTION
-            damage: 8201
-            displayName: '&eGüç Iksiri'
-        222:
-            material: POTION
-            damage: 8233
-            displayName: '&eGüç Iksiri'
-        223:
-            material: POTION
-            damage: 8265
-            displayName: '&eGüç Iksiri'
-        224:
-            material: POTION
-            damage: 8234
-            displayName: '&eYavaşlatma Iksiri'
-        225:
-            material: POTION
-            damage: 8266
-            displayName: '&eYavaşlatma Iksiri'
-        226:
-            material: POTION
-            damage: 8203
-            displayName: '&eSıçrama Iksiri'
-        227:
-            material: POTION
-            damage: 8235
-            displayName: '&eSıçrama Iksiri'
-        228:
-            material: POTION
-            damage: 8267
-            displayName: '&eSıçrama Iksiri'
-        229:
-            material: POTION
-            damage: 8237
-            displayName: '&eSualtı Iksiri'
-        230:
-            material: POTION
-            damage: 8269
-            displayName: '&eSualtı Iksiri'
-        231:
-            material: POTION
-            damage: 16385
-            displayName: '&ePatlayıcı Rejenerasyon Iksiri'
-        232:
-            material: POTION
-            damage: 16417
-            displayName: '&ePatlayıcı Rejenerasyon Iksiri'
-        233:
-            material: POTION
-            damage: 16449
-            displayName: '&ePatlayıcı Rejenerasyon Iksiri'
-        234:
-            material: POTION
-            damage: 16386
-            displayName: '&ePatlayıcı Hız Iksiri'
-        235:
-            material: POTION
-            damage: 16418
-            displayName: '&ePatlayıcı Hız Iksiri'
-        236:
-            material: POTION
-            damage: 16450
-            displayName: '&ePatlayıcı Hız Iksiri'
-        237:
-            material: POTION
-            damage: 16419
-            displayName: '&ePatlayıcı Ateş Direnci Iksiri'
-        238:
-            material: POTION
-            damage: 16451
-            displayName: '&ePatlayıcı Ateş Direnci Iksiri'
-        239:
-            material: POTION
-            damage: 16388
-            displayName: '&ePatlayıcı Zehir Iksiri'
-        240:
-            material: POTION
-            damage: 16420
-            displayName: '&ePatlayıcı Zehir Iksiri'
-        241:
-            material: POTION
-            damage: 16452
-            displayName: '&ePatlayıcı Zehir Iksiri'
-        242:
-            material: POTION
-            damage: 16453
-            displayName: '&ePatlayıcı Iyileştirme Iksiri'
-        243:
-            material: POTION
-            damage: 16421
-            displayName: '&ePatlayıcı Iyileştirme Iksiri'
-        244:
-            material: POTION
-            damage: 16422
-            displayName: '&ePatlayıcı Gece Görüş Iksiri'
-        245:
-            material: POTION
-            damage: 16454
-            displayName: '&ePatlayıcı Gece Görüş Iksiri'
-        246:
-            material: POTION
-            damage: 16424
-            displayName: '&ePatlayıcı Zayıflık Iksiri'
-        247:
-            material: POTION
-            damage: 16456
-            displayName: '&ePatlayıcı Zayıflık Iksiri'
-        248:
-            material: POTION
-            damage: 16393
-            displayName: '&ePatlayıcı Güç Iksiri'
-        249:
-            material: POTION
-            damage: 16425
-            displayName: '&ePatlayıcı Güç Iksiri'
-        250:
-            material: POTION
-            damage: 16457
-            displayName: '&ePatlayıcı Güç Iksiri'
-        251:
-            material: POTION
-            damage: 16426
-            displayName: '&ePatlayıcı Yavaşlık Iksiri'
-        252:
-            material: POTION
-            damage: 16458
-            displayName: '&ePatlayıcı Yavaşlık Iksiri'
-        253:
-            material: POTION
-            damage: 16395
-            displayName: '&ePatlayıcı Sıçrama Iksiri'
-        254:
-            material: POTION
-            damage: 16427
-            displayName: '&ePatlayıcı Sıçrama Iksiri'
-        255:
-            material: POTION
-            damage: 16459
-            displayName: '&ePatlayıcı Sıçrama Iksiri'
-        256:
-            material: POTION
-            damage: 16460
-            displayName: '&ePatlayıcı Zarar Iksiri'
-        257:
-            material: POTION
-            damage: 16428
-            displayName: '&ePatlayıcı Zarar Iksiri'
-        258:
-            material: POTION
-            damage: 16461
-            displayName: '&ePatlayıcı Sualtı Iksiri'
-    Malzeme:
-        slot: 21
-        displayName: '&6Malzemeler'
+        displayName: '&eKızıltaş'
+      KBlogu:
+        material: REDSTONE_BLOCK
+        displayName: '&eKızıltaş Bloğu'
+      Huni:
+        material: HOPPER
+        displayName: '&eHuni'
+      Yenileyici:
+        material: REPEATER
+        displayName: '&eKızıltaş Yineleyici'
+      Karistirici:
+        material: COMPARATOR
+        displayName: '&eKızıltaş Karşılaştırıcı'
+      MeseKapi:
+        material: OAK_DOOR
+        displayName: '&eMeşe Kapı'
+      DemirKapi:
+        material: IRON_DOOR
+        displayName: '&eDemir Kapı'
+      LadinKapi:
+        material: SPRUCE_DOOR
+        displayName: '&eLadin Kapı'
+      HusKapi:
+        material: BIRCH_DOOR
+        displayName: '&eHuş Kapı'
+      OrmanKapi:
+        material: JUNGLE_DOOR
+        displayName: '&eOrman Kapı'
+      AkasyaKapi:
+        material: ACACIA_DOOR
+        displayName: '&eAkasya Kapı'
+      KoyuMeseKapi:
+        material: DARK_OAK_DOOR
+        displayName: '&eKoyu Meşe Kapı'
+      GucluRay:
+        material: POWERED_RAIL
+        displayName: '&eGüçlendirilmiş Ray'
+      DedektorRay:
+        material: DETECTOR_RAIL
+        displayName: '&eDedektör Ray'
+      AktivatorRay:
+        material: ACTIVATOR_RAIL
+        displayName: '&eAktivatör Ray'
+      Ray:
+        material: RAIL
+        displayName: '&eRay'
+      Vagon:
+        material: MINECART
+        displayName: '&eMinecart'
+      SandikVagon:
+        material: CHEST_MINECART
+        displayName: '&eSandıklı Vagon'
+      HuniVagon:
+        material: HOPPER_MINECART
+        displayName: '&eHunili Vagon'
+      FirinVagon:
+        material: FURNACE_MINECART
+        displayName: '&eFırınlı Vagon'
+      Firlatici:
+        material: DISPENSER
+        displayName: '&eFırlatıcı'
+      Birakici:
+        material: DROPPER
+        displayName: '&eBırakıcı'
+      Gozlemci:
+        material: OBSERVER
+        displayName: '&eGözlemci'
+      Eyer:
+        material: SADDLE
+        displayName: '&eEyer'
+      Tekne:
+        material: OAK_BOAT
+        displayName: '&eTekne'
+      HavucluOlta:
+        material: CARROT_ON_A_STICK
+        displayName: '&eHavuçlu Olta'
+  Iksir:
+    slot: 15
+    displayName: '&6Iksir'
+    material: BREWING_STAND
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &eiksirleri &7inceleyebilir'
+    - ' &7ve satın alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      SuSisesi:
+        material: POTION
+        displayName: '&eSu Şişesi'
+      CamSise:
+        material: GLASS_BOTTLE
+        displayName: '&eCam Şişe'
+      GhastGozyasi:
+        material: GHAST_TEAR
+        displayName: '&eGhast Gözyaşı'
+      MayaliGoz:
+        material: FERMENTED_SPIDER_EYE
+        displayName: '&eMayalı Örümcek Gözü'
+      BlazeTozu:
+        material: BLAZE_POWDER
+        displayName: '&eBlaze Tozu'
+      MagmaKremi:
+        material: MAGMA_CREAM
+        displayName: '&eMagma Kremi'
+      ParlayanKarpuz:
+        material: GLISTERING_MELON_SLICE
+        displayName: '&eParlayan Karpuz'
+      AltinHavuc:
+        material: GOLDEN_CARROT
+        displayName: '&eAltın Havuç'
+      TavsanAyagi:
+        material: RABBIT_FOOT
+        displayName: '&eTavşan Ayağı'
+      Barut:
+        material: GUNPOWDER
+        displayName: '&eBarut'
+      IsiktasiTozu:
+        material: GLOWSTONE_DUST
+        displayName: '&eIşıktaşı Tozu'
+      Seker:
+        material: SUGAR
+        displayName: '&eŞeker'
+      BlazeCubugu:
+        material: BLAZE_ROD
+        displayName: '&eBlaze Çubuğu'
+      Netherwart:
+        material: NETHER_WART
+        displayName: '&eNetherwart'
+      SimyaStandi:
+        material: BREWING_STAND
+        displayName: '&eSimya Standı'
+      Kazan:
+        material: CAULDRON
+        displayName: '&eKazan'
+      RejenIksiri:
+        material: POTION
+        potionType: REGEN
+        damage: 1
+        displayName: '&eRejenerasyon Iksiri'
+      Rejenksiri2:
+        material: POTION
+        potionType: REGEN
+        damage: 2
+        displayName: '&eRejenerasyon Iksiri'
+      RejenIksiri3:
+        material: POTION
+        potionType: REGEN
+        damage: 3
+        displayName: '&eRejenerasyon Iksiri'
+      Çeviklik:
+        material: POTION
+        potionType: SPEED
+        damage: 1
+        displayName: '&eÇeviklik Iksiri'
+      Çeviklik2:
+        material: POTION
+        potionType: SPEED
+        damage: 2
+        displayName: '&eÇeviklik Iksiri'
+      Çeviklik3:
+        material: POTION
+        potionType: SPEED
+        damage: 3
+        displayName: '&eÇeviklik Iksiri'
+      AtesDirenci:
+        material: POTION
+        potionType: FIRE_RESISTANCE
+        damage: 1
+        displayName: '&eAteş Direnci Iksiri'
+      AtesDirenci2:
+        material: POTION
+        potionType: FIRE_RESISTANCE
+        damage: 3
+        displayName: '&eAteş Direnci Iksiri'
+      ZehirIksiri:
+        material: POTION
+        potionType: POISON
+        damage: 1
+        displayName: '&eZehir Iksiri'
+      ZehirIksiri2:
+        material: POTION
+        potionType: POISON
+        damage: 2
+        displayName: '&eZehir Iksiri'
+      ZehirIksiri3:
+        material: POTION
+        potionType: POISON
+        damage: 3
+        displayName: '&eZehir Iksiri'
+      Iyilestirme:
+        material: POTION
+        potionType: INSTANT_HEAL
+        damage: 1
+        displayName: '&eIyileştirme Iksiri'
+      Iyilestirme2:
+        material: POTION
+        potionType: INSTANT_HEAL
+        damage: 2
+        displayName: '&eIyileştirme Iksiri'
+      GeceGorusu:
+        material: POTION
+        potionType: NIGHT_VISION
+        damage: 1
+        displayName: '&eGece Görüşü Iksiri'
+      GeceGorusu2:
+        material: POTION
+        potionType: NIGHT_VISION
+        damage: 3
+        displayName: '&eGece Görüşü Iksiri'
+      Zayiflik:
+        material: POTION
+        potionType: WEAKNESS
+        damage: 1
+        displayName: '&eZayıflık Iksiri'
+      Zayiflik2:
+        material: POTION
+        potionType: WEAKNESS
+        damage: 3
+        displayName: '&eZayıflık Iksiri'
+      GücIksiri:
+        material: POTION
+        potionType: STRENGTH
+        damage: 1
+        displayName: '&eGüç Iksiri'
+      GücIksiri2:
+        material: POTION
+        potionType: STRENGTH
+        damage: 2
+        displayName: '&eGüç Iksiri'
+      GücIksiri3:
+        material: POTION
+        potionType: STRENGTH
+        damage: 3
+        displayName: '&eGüç Iksiri'
+      Yavaslatma:
+        material: POTION
+        potionType: SLOWNESS
+        damage: 1
+        displayName: '&eYavaşlatma Iksiri'
+      Yavaslatma2:
+        material: POTION
+        potionType: SLOWNESS
+        damage: 3
+        displayName: '&eYavaşlatma Iksiri'
+      SicramaIksiri:
+        material: POTION
+        potionType: JUMP
+        damage: 1
+        displayName: '&eSıçrama Iksiri'
+      SicramaIksiri2:
+        material: POTION
+        potionType: JUMP
+        damage: 2
+        displayName: '&eSıçrama Iksiri'
+      SicramaIksiri3:
+        material: POTION
+        potionType: JUMP
+        damage: 3
+        displayName: '&eSıçrama Iksiri'
+      SualtiIksiri:
+        material: POTION
+        potionType: WATER_BREATHING
+        damage: 1
+        displayName: '&eSualtı Iksiri'
+      SualtiIksiri2:
+        material: POTION
+        potionType: WATER_BREATHING
+        damage: 3
+        displayName: '&eSualtı Iksiri'
+      PatlayiciRejen:
+        material: SPLASH_POTION
+        potionType: REGEN
+        damage: 1
+        displayName: '&ePatlayıcı Rejenerasyon Iksiri'
+      PatlayiciRejen2:
+        material: SPLASH_POTION
+        potionType: REGEN
+        damage: 2
+        displayName: '&ePatlayıcı Rejenerasyon Iksiri'
+      PatlayiciRejen3:
+        material: SPLASH_POTION
+        potionType: REGEN
+        damage: 3
+        displayName: '&ePatlayıcı Rejenerasyon Iksiri'
+      PatlayiciHız:
+        material: SPLASH_POTION
+        potionType: SPEED
+        damage: 1
+        displayName: '&ePatlayıcı Hız Iksiri'
+      PatlayiciHız2:
+        material: SPLASH_POTION
+        potionType: SPEED
+        damage: 2
+        displayName: '&ePatlayıcı Hız Iksiri'
+      PatlayiciHız3:
+        material: SPLASH_POTION
+        potionType: SPEED
+        damage: 3
+        displayName: '&ePatlayıcı Hız Iksiri'
+      PatlayiciAteş:
+        material: SPLASH_POTION
+        potionType: FIRE_RESISTANCE
+        damage: 1
+        displayName: '&ePatlayıcı Ateş Direnci Iksiri'
+      PatlayiciAteş2:
+        material: SPLASH_POTION
+        potionType: FIRE_RESISTANCE
+        damage: 3
+        displayName: '&ePatlayıcı Ateş Direnci Iksiri'
+      PatlayanZehir:
+        material: SPLASH_POTION
+        potionType: POISON
+        damage: 1
+        displayName: '&ePatlayıcı Zehir Iksiri'
+      PatlayanZehir2:
+        material: SPLASH_POTION
+        potionType: POISON
+        damage: 2
+        displayName: '&ePatlayıcı Zehir Iksiri'
+      PatlayanZehir3:
+        material: SPLASH_POTION
+        potionType: POISON
+        damage: 3
+        displayName: '&ePatlayıcı Zehir Iksiri'
+      PatlayanIyile:
+        material: SPLASH_POTION
+        potionType: INSTANT_HEAL
+        damage: 1
+        displayName: '&ePatlayıcı Iyileştirme Iksiri'
+      PatlayanIyile2:
+        material: SPLASH_POTION
+        potionType: INSTANT_HEAL
+        damage: 2
+        displayName: '&ePatlayıcı Iyileştirme Iksiri'
+      PatlayanGG:
+        material: SPLASH_POTION
+        potionType: NIGHT_VISION
+        damage: 1
+        displayName: '&ePatlayıcı Gece Görüş Iksiri'
+      PatlayanGG2:
+        material: SPLASH_POTION
+        potionType: NIGHT_VISION
+        damage: 3
+        displayName: '&ePatlayıcı Gece Görüş Iksiri'
+      PatlayanZayıf:
+        material: SPLASH_POTION
+        potionType: WEAKNESS
+        damage: 1
+        displayName: '&ePatlayıcı Zayıflık Iksiri'
+      PatlayanZayıf2:
+        material: SPLASH_POTION
+        potionType: WEAKNESS
+        damage: 3
+        displayName: '&ePatlayıcı Zayıflık Iksiri'
+      PatlayiciGüç:
+        material: SPLASH_POTION
+        potionType: STRENGTH
+        damage: 1
+        displayName: '&ePatlayıcı Güç Iksiri'
+      PatlayiciGüç2:
+        material: SPLASH_POTION
+        potionType: STRENGTH
+        damage: 2
+        displayName: '&ePatlayıcı Güç Iksiri'
+      PatlayiciGüç3:
+        material: SPLASH_POTION
+        potionType: STRENGTH
+        damage: 3
+        displayName: '&ePatlayıcı Güç Iksiri'
+      PatlayanYavaş:
+        material: SPLASH_POTION
+        potionType: SLOWNESS
+        damage: 1
+        displayName: '&ePatlayıcı Yavaşlık Iksiri'
+      PatlayanYavaş2:
+        material: SPLASH_POTION
+        potionType: SLOWNESS
+        damage: 3
+        displayName: '&ePatlayıcı Yavaşlık Iksiri'
+      PatlayanSıçra:
+        material: SPLASH_POTION
+        potionType: JUMP
+        damage: 1
+        displayName: '&ePatlayıcı Sıçrama Iksiri'
+      PatlayanSıçra2:
+        material: SPLASH_POTION
+        potionType: JUMP
+        damage: 2
+        displayName: '&ePatlayıcı Sıçrama Iksiri'
+      PatlayanSıçra3:
+        material: SPLASH_POTION
+        potionType: JUMP
+        damage: 3
+        displayName: '&ePatlayıcı Sıçrama Iksiri'
+      PatlayanZarar:
+        material: SPLASH_POTION
+        potionType: INSTANT_DAMAGE
+        damage: 1
+        displayName: '&ePatlayıcı Zarar Iksiri'
+      PatlayanZarar2:
+        material: SPLASH_POTION
+        potionType: INSTANT_DAMAGE
+        damage: 2
+        displayName: '&ePatlayıcı Zarar Iksiri'
+      PatlayanSuAlti:
+        material: SPLASH_POTION
+        potionType: WATER_BREATHING
+        damage: 1
+        displayName: '&ePatlayıcı Sualtı Iksiri'
+      KaliciRejen:
+        material: LINGERING_POTION
+        potionType: REGEN
+        damage: 1
+        displayName: '&eKalıcı Rejenerasyon Iksiri'
+      KaliciRejen2:
+        material: LINGERING_POTION
+        potionType: REGEN
+        damage: 2
+        displayName: '&eKalıcı Rejenerasyon Iksiri'
+      KaliciRejen3:
+        material: LINGERING_POTION
+        potionType: REGEN
+        damage: 3
+        displayName: '&eKalıcı Rejenerasyon Iksiri'
+      KaliciHız:
+        material: LINGERING_POTION
+        potionType: SPEED
+        damage: 1
+        displayName: '&eKalıcı Hız Iksiri'
+      KaliciHız2:
+        material: LINGERING_POTION
+        potionType: SPEED
+        damage: 2
+        displayName: '&eKalıcı Hız Iksiri'
+      KaliciHız3:
+        material: LINGERING_POTION
+        potionType: SPEED
+        damage: 3
+        displayName: '&eKalıcı Hız Iksiri'
+      KaliciAteş:
+        material: LINGERING_POTION
+        potionType: FIRE_RESISTANCE
+        damage: 1
+        displayName: '&eKalıcı Ateş Direnci Iksiri'
+      KaliciAteş2:
+        material: LINGERING_POTION
+        potionType: FIRE_RESISTANCE
+        damage: 3
+        displayName: '&eKalıcı Ateş Direnci Iksiri'
+      KaliciZehir:
+        material: LINGERING_POTION
+        potionType: POISON
+        damage: 1
+        displayName: '&eKalıcı Zehir Iksiri'
+      KaliciZehir2:
+        material: LINGERING_POTION
+        potionType: POISON
+        damage: 2
+        displayName: '&eKalıcı Zehir Iksiri'
+      KaliciZehir3:
+        material: LINGERING_POTION
+        potionType: POISON
+        damage: 3
+        displayName: '&eKalıcı Zehir Iksiri'
+      KaliciIyile:
+        material: LINGERING_POTION
+        potionType: INSTANT_HEAL
+        damage: 1
+        displayName: '&eKalıcı Iyileştirme Iksiri'
+      KaliciIyile2:
+        material: LINGERING_POTION
+        potionType: INSTANT_HEAL
+        damage: 2
+        displayName: '&eKalıcı Iyileştirme Iksiri'
+      KaliciGG:
+        material: LINGERING_POTION
+        potionType: NIGHT_VISION
+        damage: 1
+        displayName: '&eKalıcı Gece Görüş Iksiri'
+      KaliciGG2:
+        material: LINGERING_POTION
+        potionType: NIGHT_VISION
+        damage: 3
+        displayName: '&eKalıcı Gece Görüş Iksiri'
+      KaliciZayıf:
+        material: LINGERING_POTION
+        potionType: WEAKNESS
+        damage: 1
+        displayName: '&eKalıcı Zayıflık Iksiri'
+      KaliciZayıf2:
+        material: LINGERING_POTION
+        potionType: WEAKNESS
+        damage: 3
+        displayName: '&eKalıcı Zayıflık Iksiri'
+      KaliciGüç:
+        material: LINGERING_POTION
+        potionType: STRENGTH
+        damage: 1
+        displayName: '&eKalıcı Güç Iksiri'
+      KaliciGüç2:
+        material: LINGERING_POTION
+        potionType: STRENGTH
+        damage: 2
+        displayName: '&eKalıcı Güç Iksiri'
+      KaliciGüç3:
+        material: LINGERING_POTION
+        potionType: STRENGTH
+        damage: 3
+        displayName: '&eKalıcı Güç Iksiri'
+      KaliciYavaş:
+        material: LINGERING_POTION
+        potionType: SLOWNESS
+        damage: 1
+        displayName: '&eKalıcı Yavaşlık Iksiri'
+      KaliciYavaş2:
+        material: LINGERING_POTION
+        potionType: SLOWNESS
+        damage: 3
+        displayName: '&eKalıcı Yavaşlık Iksiri'
+      KaliciSıçra:
+        material: LINGERING_POTION
+        potionType: JUMP
+        damage: 1
+        displayName: '&eKalıcı Sıçrama Iksiri'
+      KaliciSıçra2:
+        material: LINGERING_POTION
+        potionType: JUMP
+        damage: 2
+        displayName: '&eKalıcı Sıçrama Iksiri'
+      KaliciSıçra3:
+        material: LINGERING_POTION
+        potionType: JUMP
+        damage: 3
+        displayName: '&eKalıcı Sıçrama Iksiri'
+      KaliciZarar:
+        material: LINGERING_POTION
+        potionType: INSTANT_DAMAGE
+        damage: 1
+        displayName: '&eKalıcı Zarar Iksiri'
+      KaliciZarar2:
+        material: LINGERING_POTION
+        potionType: INSTANT_DAMAGE
+        damage: 2
+        displayName: '&eKalıcı Zarar Iksiri'
+      KaliciSuAlti:
+        material: LINGERING_POTION
+        potionType: WATER_BREATHING
+        damage: 1
+        displayName: '&eKalıcı Sualtı Iksiri'
+  Malzeme:
+    slot: 21
+    displayName: '&6Malzemeler'
+    material: DIAMOND
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &ecevher, boya &7gibi'
+    - ' &7ürünleri inceleyebilir ve'
+    - ' &7satın alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      DenizinKalbi:
+        material: HEART_OF_THE_SEA
+        displayName: '&eDenizin Kalbi'
+      Netherit:
+        material: NETHERITE_INGOT
+        displayName: '&eNetherit Külçesi'
+      Zumrut:
+        material: EMERALD
+        displayName: '&eZümrüt'
+      Elmas:
         material: DIAMOND
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &ecevher, boya &7gibi'
-        - ' &7ürünleri inceleyebilir ve'
-        - ' &7satın alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        259:
-            material: EMERALD
-            displayName: '&eZümrüt'
-        260:
-            material: DIAMOND
-            displayName: '&eElmas'
-        261:
-            material: IRON_INGOT
-            displayName: '&eDemir'
-        262:
-            material: GOLD_INGOT
-            displayName: '&eAltın'
-        263:
-            material: COAL
-            damage: 0
-            displayName: '&eKömür'
-        264:
-            material: COAL
-            damage: 1
-            displayName: '&eOdun Kömürü'
-        265:
-            material: NETHER_BRICK_ITEM
-            displayName: '&eNether Tuğlası'
-        266:
-            material: STICK
-            displayName: '&eÇubuk'
-        267:
-            material: BOWL
-            displayName: '&eKase'
-        268:
-            material: STRING
-            displayName: '&eIp'
-        269:
-            material: FEATHER
-            displayName: '&eTüy'
-        270:
-            material: FLINT
-            displayName: '&eÇakmaktaşı'
-        271:
-            material: LEATHER
-            displayName: '&eDeri'
-        272:
-            material: CLAY_BALL
-            displayName: '&eKil'
-        273:
-            material: SUGAR_CANE
-            displayName: '&eŞeker Kamışı'
-        274:
-            material: NETHER_STAR
-            displayName: '&eNether Yıldızı'
-        275:
-            material: RABBIT_HIDE
-            displayName: '&eTavşan Postu'
-        276:
-            material: QUARTZ
-            displayName: '&eKuvars'
-        277:
-            material: INK_SACK
-            damage: 0
-            displayName: '&eMürekkep Kesesi'
-        278:
-            material: INK_SACK
-            damage: 1
-            displayName: '&eGül Kırmızısı'
-        279:
-            material: INK_SACK
-            damage: 2
-            displayName: '&eKaktüs Yeşili'
-        280:
-            material: INK_SACK
-            damage: 3
-            displayName: '&eKakao Çekirdekleri'
-        281:
-            material: INK_SACK
-            damage: 4
-            displayName: '&eLapis Lazuli'
-        282:
-            material: INK_SACK
-            damage: 5
-            displayName: '&eMor Boya'
-        283:
-            material: INK_SACK
-            damage: 6
-            displayName: '&eCamgöbeği Boya'
-        284:
-            material: INK_SACK
-            damage: 7
-            displayName: '&eAçık Gri Boya'
-        285:
-            material: INK_SACK
-            damage: 8
-            displayName: '&eGri Boya'
-        286:
-            material: INK_SACK
-            damage: 9
-            displayName: '&ePembe Boya'
-        287:
-            material: INK_SACK
-            damage: 10
-            displayName: '&eKireç Boya'
-        288:
-            material: INK_SACK
-            damage: 11
-            displayName: '&eKarahindiba Sarısı'
-        289:
-            material: INK_SACK
-            damage: 12
-            displayName: '&eAçık Mavi Boya'
-        367:
-            material: INK_SACK
-            damage: 13
-            displayName: '&eEflatun Boya'
-        368:
-            material: INK_SACK
-            damage: 14
-            displayName: '&eTuruncu Boya'
-        369:
-            material: INK_SACK
-            damage: 15
-            displayName: '&eKemik Tozu'
-    Yemek:
-        slot: 22
-        displayName: '&6Yemek'
+        displayName: '&eElmas'
+      Demir:
+        material: IRON_INGOT
+        displayName: '&eDemir'
+      Altin:
+        material: GOLD_INGOT
+        displayName: '&eAltın'
+      Kömür:
+        material: COAL
+        displayName: '&eKömür'
+      OdunKömürü:
+        material: CHARCOAL
+        displayName: '&eOdun Kömürü'
+      NetherTugla:
+        material: NETHER_BRICK
+        displayName: '&eNether Tuğlası'
+      Çubuk:
+        material: STICK
+        displayName: '&eÇubuk'
+      Kase:
+        material: BOWL
+        displayName: '&eKase'
+      Ip:
+        material: STRING
+        displayName: '&eIp'
+      Tüy:
+        material: FEATHER
+        displayName: '&eTüy'
+      Cakmaktasi:
+        material: FLINT
+        displayName: '&eÇakmaktaşı'
+      Deri:
+        material: LEATHER
+        displayName: '&eDeri'
+      Kilball:
+        material: CLAY_BALL
+        displayName: '&eKil'
+      SekerKamisi:
+        material: SUGAR_CANE
+        displayName: '&eŞeker Kamışı'
+      NetherYil:
+        material: NETHER_STAR
+        displayName: '&eNether Yıldızı'
+      TavsanPostu:
+        material: RABBIT_HIDE
+        displayName: '&eTavşan Postu'
+      Kuvars:
+        material: QUARTZ
+        displayName: '&eKuvars'
+      Murekkep:
+        material: BLACK_DYE
+        displayName: '&eMürekkep Kesesi'
+      GulKirmizi:
+        material: RED_DYE
+        displayName: '&eGül Kırmızısı'
+      KaktusYesil:
+        material: GREEN_DYE
+        displayName: '&eKaktüs Yeşili'
+      Kakao:
+        material: BROWN_DYE
+        displayName: '&eKakao Çekirdekleri'
+      LapisLazuli:
+        material: LAPIS_LAZULI
+        displayName: '&eLapis Lazuli'
+      MorBoya:
+        material: PURPLE_DYE
+        displayName: '&eMor Boya'
+      Camgobegi:
+        material: CYAN_DYE
+        displayName: '&eCamgöbeği Boya'
+      AcikGriBoya:
+        material: LIGHT_GRAY_DYE
+        displayName: '&eAçık Gri Boya'
+      GriBoya:
+        material: GRAY_DYE
+        displayName: '&eGri Boya'
+      PembeBoya:
+        material: PINK_DYE
+        displayName: '&ePembe Boya'
+      KirecBoya:
+        material: LIME_DYE
+        displayName: '&eKireç Boya'
+      Karahindiba:
+        material: YELLOW_DYE
+        displayName: '&eKarahindiba Sarısı'
+      AcikMavi:
+        material: LIGHT_BLUE_DYE
+        displayName: '&eAçık Mavi Boya'
+      EflatunBoya:
+        material: MAGENTA_DYE
+        displayName: '&eEflatun Boya'
+      TuruncuBoya:
+        material: ORANGE_DYE
+        displayName: '&eTuruncu Boya'
+      KemikTozu:
+        material: WHITE_DYE
+        displayName: '&eKemik Tozu'
+  Yemek:
+    slot: 22
+    displayName: '&6Yemek'
+    material: APPLE
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &eyemekleri &7inceleyebilir'
+    - ' &7ve satın alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      Pancar:
+        material: BEETROOT
+        displayName: '&ePancar'
+      TatOrMeyvesi:
+        material: SWEET_BERRIES
+        displayName: '&eTatlı Orman Meyvesi'
+      NakMeyvesi:
+        material: CHORUS_FRUIT
+        displayName: '&eNakarat Meyvesi'
+      AltinElma:
+        material: GOLDEN_APPLE
+        displayName: '&eAltın Elma'
+      BuyuluAltinElma:
+        material: ENCHANTED_GOLDEN_APPLE
+        displayName: '&eBüyülü Altın Elma'
+      Elma:
         material: APPLE
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &eyemekleri &7inceleyebilir'
-        - ' &7ve satın alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        370:
-            material: GOLDEN_APPLE
-            damage: 0
-            displayName: '&eAltın Elma'
-        371:
-            material: GOLDEN_APPLE
-            damage: 1
-            displayName: '&eBüyülü Altın Elma'
-        372:
-            material: APPLE
-            displayName: '&eElma'
-        373:
-            material: MUSHROOM_SOUP
-            displayName: '&eMantar Güveç'
-        374:
-            material: BREAD
-            displayName: '&eEkmek'
-        375:
-            material: PORK
-            displayName: '&eÇiğ Domuz Eti'
-        376:
-            material: GRILLED_PORK
-            displayName: '&eDomuz Eti'
-        377:
-            material: RAW_FISH
-            damage: 0
-            displayName: '&eÇiğ Balık'
-        378:
-            material: RAW_FISH
-            damage: 1
-            displayName: '&eÇiğ Somon Balığı'
-        379:
-            material: RAW_FISH
-            damage: 2
-            displayName: '&ePalyaço Balığı'
-        380:
-            material: RAW_FISH
-            damage: 3
-            displayName: '&eKirpi Balığı'
-        381:
-            material: COOKED_FISH
-            damage: 0
-            displayName: '&ePişmiş Balık'
-        382:
-            material: COOKED_FISH
-            damage: 1
-            displayName: '&ePişmiş Somon Balık'
-        392:
-            material: CAKE
-            displayName: '&ePasta'
-        393:
-            material: COOKIE
-            displayName: '&eKurabiye'
-        394:
-            material: MELON
-            displayName: '&eKarpuz'
-        395:
-            material: RAW_BEEF
-            displayName: '&eÇiğ Biftek'
-        396:
-            material: COOKED_BEEF
-            displayName: '&eBiftek'
-        397:
-            material: RAW_CHICKEN
-            displayName: '&eÇiğ Tavuk Eti'
-        398:
-            material: COOKED_CHICKEN
-            displayName: '&ePişmiş Tavuk Eti'
-        399:
-            material: CARROT_ITEM
-            displayName: '&eHavuç'
-        400:
-            material: POTATO_ITEM
-            displayName: '&ePatates'
-        401:
-            material: BAKED_POTATO
-            displayName: '&eHaşlanmış Patates'
-        402:
-            material: PUMPKIN_PIE
-            displayName: '&eBalkabağı Turtası'
-        403:
-            material: RABBIT
-            displayName: '&eÇiğ Tavşan Eti'
-        404:
-            material: COOKED_RABBIT
-            displayName: '&ePişmiş Tavşan Eti'
-        405:
-            material: RABBIT_STEW
-            displayName: '&eTavşan Yahnisi'
-        406:
-            material: MUTTON
-            displayName: '&eÇiğ Koyun Eti'
-        407:
-            material: COOKED_MUTTON
-            displayName: '&ePişmiş Koyun Eti'
-    Kitap:
-        slot: 23
-        displayName: '&6Büyülü Kitaplar'
+        displayName: '&eElma'
+      MantarGuvec:
+        material: MUSHROOM_STEW
+        displayName: '&eMantar Güveç'
+      Ekmek:
+        material: BREAD
+        displayName: '&eEkmek'
+      CigDomuzEti:
+        material: PORKCHOP
+        displayName: '&eÇiğ Domuz Eti'
+      DomuzEti:
+        material: COOKED_PORKCHOP
+        displayName: '&eDomuz Eti'
+      CigBalık:
+        material: COD
+        displayName: '&eÇiğ Balık'
+      CigSomonBalık:
+        material: SALMON
+        displayName: '&eÇiğ Somon Balığı'
+      PalyacoBaligi:
+        material: TROPICAL_FISH
+        displayName: '&ePalyaço Balığı'
+      KirpiBaligi:
+        material: PUFFERFISH
+        displayName: '&eKirpi Balığı'
+      PismisBalik:
+        material: COOKED_COD
+        displayName: '&ePişmiş Balık'
+      PismisSomon:
+        material: COOKED_SALMON
+        displayName: '&ePişmiş Somon Balık'
+      Pasta:
+        material: CAKE
+        displayName: '&ePasta'
+      Kurabiye:
+        material: COOKIE
+        displayName: '&eKurabiye'
+      Karpuz:
+        material: MELON_SLICE
+        displayName: '&eKarpuz'
+      CigBiftek:
+        material: BEEF
+        displayName: '&eÇiğ Biftek'
+      Biftek:
+        material: COOKED_BEEF
+        displayName: '&eBiftek'
+      CigTavuk:
+        material: CHICKEN
+        displayName: '&eÇiğ Tavuk Eti'
+      PismisTavuk:
+        material: COOKED_CHICKEN
+        displayName: '&ePişmiş Tavuk Eti'
+      Havuc:
+        material: CARROT
+        displayName: '&eHavuç'
+      Patates:
+        material: POTATO
+        displayName: '&ePatates'
+      PismisPatates:
+        material: BAKED_POTATO
+        displayName: '&eHaşlanmış Patates'
+      BalkabagiTurta:
+        material: PUMPKIN_PIE
+        displayName: '&eBalkabağı Turtası'
+      CigTavsan:
+        material: RABBIT
+        displayName: '&eÇiğ Tavşan Eti'
+      PismisTavsan:
+        material: COOKED_RABBIT
+        displayName: '&ePişmiş Tavşan Eti'
+      TavsanYahnisi:
+        material: RABBIT_STEW
+        displayName: '&eTavşan Yahnisi'
+      CigKoyunEti:
+        material: MUTTON
+        displayName: '&eÇiğ Koyun Eti'
+      KoyunEti:
+        material: COOKED_MUTTON
+        displayName: '&ePişmiş Koyun Eti'
+  Kitap:
+    slot: 23
+    displayName: '&6Büyülü Kitaplar'
+    material: ENCHANTED_BOOK
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &ebüyülü kitapları'
+    - ' &7inceleyebilir ve satın'
+    - ' &7alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      Tamir:
         material: ENCHANTED_BOOK
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &ebüyülü kitapları'
-        - ' &7inceleyebilir ve satın'
-        - ' &7alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        408:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_ENVIRONMENTAL:1
-        409:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_ENVIRONMENTAL:2
-        410:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_ENVIRONMENTAL:3
-        411:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_ENVIRONMENTAL:4
-        412:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FIRE:1
-        413:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FIRE:2
-        414:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FIRE:3
-        415:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FIREL:4
-        416:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FALL:1
-        417:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FALL:2
-        418:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FALL:3
-        419:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_FALL:4
-        420:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_EXPLOSIONS:1
-        421:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_EXPLOSIONS:2
-        422:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_EXPLOSIONS:3
-        423:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_EXPLOSIONS:4
-        424:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_PROJECTILE:1
-        425:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_PROJECTILE:2
-        426:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_PROJECTILE:3
-        427:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - PROTECTION_PROJECTILE:4
-        428:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - OXYGEN:1
-        429:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - OXYGEN:2
-        430:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - OXYGEN:3
-        431:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - WATER_WORKER:1
-        432:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - THORNS:1
-        433:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - THORNS:2
-        444:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - THORNS:3
-        435:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DEPTH_STRIDER:1
-        290:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DEPTH_STRIDER:2
-        291:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DEPTH_STRIDER:3
-        292:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ALL:1
-        293:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ALL:2
-        294:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ALL:3
-        295:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ALL:4
-        296:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ALL:5
-        297:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_UNDEAD:1
-        298:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_UNDEAD:2
-        299:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_UNDEAD:3
-        300:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_UNDEAD:4
-        301:
-            material: ENCHANTED_BOOK
-            ddisplayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_UNDEAD:5
-        302:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ARTHROPODS:1
-        303:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ARTHROPODS:2
-        304:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ARTHROPODS:3
-        305:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ARTHROPODS:4
-        306:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DAMAGE_ARTHROPODS:5
-        307:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - KNOCKBACK:1
-        308:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - KNOCKBACK:2
-        309:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - FIRE_ASPECT:1
-        310:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - FIRE_ASPECT:2
-        311:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LOOT_BONUS_MOBS:1
-        312:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LOOT_BONUS_MOBS:2
-        313:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LOOT_BONUS_MOBS:3
-        314:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DIG_SPEED:1
-        315:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DIG_SPEED:2
-        316:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DIG_SPEED:3
-        317:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DIG_SPEED:4
-        318:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DIG_SPEED:5
-        319:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - SILK_TOUCH:1
-        320:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DURABILITY:1
-        321:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DURABILITY:2
-        322:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DURABILITY:3
-        323:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DURABILITY:4
-        324:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - DURABILITY:5
-        325:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LOOT_BONUS_BLOCKS:1
-        326:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LOOT_BONUS_BLOCKS:2
-        327:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LOOT_BONUS_BLOCKS:3
-        328:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_DAMAGE:1
-        329:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_DAMAGE:2
-        330:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_DAMAGE:3
-        331:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_DAMAGE:4
-        332:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_DAMAGE:5
-        333:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_KNOCKBACK:1
-        334:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_KNOCKBACK:2
-        335:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_FIRE:1
-        336:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - ARROW_INFINITE:1
-        337:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LUCK:1
-        338:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LUCK:2
-        339:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LUCK:3
-        340:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LURE:1
-        341:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LURE:2
-        342:
-            material: ENCHANTED_BOOK
-            displayName: '&eBüyülü Kitap'
-            enchantment:
-            - LURE:3
-    Diğer:
-        slot: 24
-        displayName: '&6Diğer'
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - MENDING:1
+      Koruma1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_ENVIRONMENTAL:1
+      Koruma2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_ENVIRONMENTAL:2
+      Koruma3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_ENVIRONMENTAL:3
+      Koruma4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_ENVIRONMENTAL:4
+      AtesKoruma1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FIRE:1
+      AtesKoruma2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FIRE:2
+      AtesKoruma3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FIRE:3
+      AtesKoruma4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FIRE:4
+      TuyDususu1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FALL:1
+      TuyDususu2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FALL:2
+      TuyDususu3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FALL:3
+      TuyDususu4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_FALL:4
+      PatlamaKoruma1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_EXPLOSIONS:1
+      PatlamaKoruma2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_EXPLOSIONS:2
+      PatlamaKoruma3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_EXPLOSIONS:3
+      PatlamaKoruma4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_EXPLOSIONS:4
+      HasarKoruma1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_PROJECTILE:1
+      HasarKoruma2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_PROJECTILE:2
+      HasarKoruma3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_PROJECTILE:3
+      HasarKoruma4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - PROTECTION_PROJECTILE:4
+      Solungac1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - OXYGEN:1
+      Solungac2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - OXYGEN:2
+      Solungac3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - OXYGEN:3
+      SuAdaptasyon1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - WATER_WORKER:1
+      Dikenler1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - THORNS:1
+      Dikenler2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - THORNS:2
+      Dikenler3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - THORNS:3
+      DerinKosucu1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DEPTH_STRIDER:1
+      DerinKosucu2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DEPTH_STRIDER:2
+      DerinKosucu3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DEPTH_STRIDER:3
+      Keskinlik1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ALL:1
+      Keskinlik2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ALL:2
+      Keskinlik3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ALL:3
+      Keskinlik4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ALL:4
+      Keskinlik5:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ALL:5
+      Darbe1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_UNDEAD:1
+      Darbe2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_UNDEAD:2
+      Darbe3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_UNDEAD:3
+      Darbe4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_UNDEAD:4
+      Darbe5:
+        material: ENCHANTED_BOOK
+        ddisplayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_UNDEAD:5
+      Eklem1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ARTHROPODS:1
+      Eklem2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ARTHROPODS:2
+      Eklem3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ARTHROPODS:3
+      Eklem4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ARTHROPODS:4
+      Eklem5:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DAMAGE_ARTHROPODS:5
+      Savurma1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - KNOCKBACK:1
+      Savurma2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - KNOCKBACK:2
+      AlevdenCehre1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - FIRE_ASPECT:1
+      AlevdenCehre2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - FIRE_ASPECT:2
+      Ganimet1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LOOT_BONUS_MOBS:1
+      Ganimet2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LOOT_BONUS_MOBS:2
+      Ganimet3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LOOT_BONUS_MOBS:3
+      Verimlilik1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DIG_SPEED:1
+      Verimlilik2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DIG_SPEED:2
+      Verimlilik3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DIG_SPEED:3
+      Verimlilik4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DIG_SPEED:4
+      Verimlilik5:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DIG_SPEED:5
+      Ipeksi1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - SILK_TOUCH:1
+      Kirilmazlik1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DURABILITY:1
+      Kirilmazlik2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DURABILITY:2
+      Kirilmazlik3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DURABILITY:3
+      Kirilmazlik4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DURABILITY:4
+      Kirilmazlik5:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - DURABILITY:5
+      Servet1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LOOT_BONUS_BLOCKS:1
+      Servet2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LOOT_BONUS_BLOCKS:2
+      Servet3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LOOT_BONUS_BLOCKS:3
+      Güc1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_DAMAGE:1
+      Güc2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_DAMAGE:2
+      Güc3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_DAMAGE:3
+      Güc4:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_DAMAGE:4
+      Güc5:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_DAMAGE:5
+      Yumruk1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_KNOCKBACK:1
+      Yumruk2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_KNOCKBACK:2
+      Alev1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_FIRE:1
+      Sonsuzluk1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - ARROW_INFINITE:1
+      DenizSansi1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LUCK:1
+      DenizSansi2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LUCK:2
+      DenizSansi3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LUCK:3
+      Ayartma1:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LURE:1
+      Ayartma2:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LURE:2
+      Ayartma3:
+        material: ENCHANTED_BOOK
+        displayName: '&eBüyülü Kitap'
+        enchantment:
+        - LURE:3
+  Diğer:
+    slot: 24
+    displayName: '&6Diğer'
+    material: LAVA_BUCKET
+    displayLore:
+    - ''
+    - ' &8▪ &7Bu kategoride, ihtiyacın'
+    - ' &7olan &ekayış, kova, makas &7gibi'
+    - ' &7çeşitli ürünleri inceleyebilir'
+    - ' &7ve satın alabilirsin.'
+    - ''
+    - ' &8▸ &aTıkla ve alışverişe başla!'
+    items:
+      Kalkan:
+        material: SHIELD
+        displayName: '&eKalkan'
+      Mizrak:
+        material: TRIDENT
+        displayName: '&eÜçlü Mızrak'
+      OlTotem:
+        material: TOTEM_OF_UNDYING
+        displayName: '&eÖlümsüzlük Totemi'
+      Elytra:
+        material: ELYTRA
+        displayName: '&eElytra'
+      BuyuMasasi:
+        material: ENCHANTING_TABLE
+        displayName: '&eBüyü Masası'
+      Kova:
+        material: BUCKET
+        displayName: '&eKova'
+      LavKovasi:
         material: LAVA_BUCKET
-        displayLore:
-        - ''
-        - ' &8▪ &7Bu kategoride, ihtiyacın'
-        - ' &7olan &ekayış, kova, makas &7gibi'
-        - ' &7çeşitli ürünleri inceleyebilir'
-        - ' &7ve satın alabilirsin.'
-        - ''
-        - ' &8▸ &aTıkla ve alışverişe başla!'
-        items:
-        343:
-            material: ENCHANTMENT_TABLE
-            displayName: '&eBüyü Masası'
-        344:
-            material: BUCKET
-            displayName: '&eKova'
-        345:
-            material: LAVA_BUCKET
-            displayName: '&eLav Kovası'
-        346:
-            material: WATER_BUCKET
-            displayName: '&eSu Kovası'
-        347:
-            material: MILK_BUCKET
-            displayName: '&eSüt Kovası'
-        348:
-            material: ENDER_PEARL
-            displayName: '&eEnder Incisi'
-        349:
-            material: EYE_OF_ENDER
-            displayName: '&eEnder Gözü'
-        350:
-            material: IRON_BARDING
-            displayName: '&eDemir At Zırhı'
-        351:
-            material: GOLD_BARDING
-            displayName: '&eAltın At Zırhı'
-        352:
-            material: DIAMOND_BARDING
-            displayName: '&eElmas At Zırhı'
-        353:
-            material: FISHING_ROD
-            displayName: '&eOlta'
-        354:
-            material: WATCH
-            displayName: '&eSaat'
-        355:
-            material: SHEARS
-            displayName: '&eMakas'
-        356:
-            material: NAME_TAG
-            displayName: '&eIsim Etiketi'
-        357:
-            material: FLINT_AND_STEEL
-            displayName: '&eÇakmaktaşı ve Çelik'
-        358:
-            material: BOW
-            displayName: '&eYay'
-        359:
-            material: ARROW
-            displayName: '&eOk'
-        360:
-            material: LADDER
-            displayName: '&eMerdiven'
-        361:
-            material: TORCH
-            displayName: '&eMeşale'
-        362:
-            material: SIGN
-            displayName: '&eTabela'
-        363:
-            material: ITEM_FRAME
-            displayName: '&eEşya Çerçevesi'
-        364:
-            material: SLIME_BALL
-            displayName: '&eBalçık Topu'
-        365:
-            material: SKULL_ITEM
-            damage: 1
-            displayName: '&eWither Kafası'
-        366:
-            material: LEASH
-            displayName: '&eKayış'       
-    confirmation:
-    yesItem:
-        slot: 11
-        material: stained_clay
-        damage: 5
-        name: '&aKabul Et'
-        lore:
-        - ''
-        - ' &8▪ &7İşlemi onayla!'
-    noItem:
-        slot: 15
-        material: stained_clay
-        damage: 14
-        name: '&4Reddet'
-        lore:
-        - ''
-        - ' &8▪ &7İşlemi iptal et!'
-    fill:
-        material: stained_glass_pane
-        damage: 7
+        displayName: '&eLav Kovası'
+      SuKovasi:
+        material: WATER_BUCKET
+        displayName: '&eSu Kovası'
+      SutKovasi:
+        material: MILK_BUCKET
+        displayName: '&eSüt Kovası'
+      EnderIncisi:
+        material: ENDER_PEARL
+        displayName: '&eEnder Incisi'
+      EnderGozu:
+        material: ENDER_EYE
+        displayName: '&eEnder Gözü'
+      DeriAtZirhi:
+        material: LEATHER_HORSE_ARMOR
+        displayName: '&eDeri At Zırhı'
+      DemirAtZirhi:
+        material: IRON_HORSE_ARMOR
+        displayName: '&eDemir At Zırhı'
+      AltinAtZirhi:
+        material: GOLDEN_HORSE_ARMOR
+        displayName: '&eAltın At Zırhı'
+      ElmasAtZirhi:
+        material: DIAMOND_HORSE_ARMOR
+        displayName: '&eElmas At Zırhı'
+      Olta:
+        material: FISHING_ROD
+        displayName: '&eOlta'
+      Saat:
+        material: CLOCK
+        displayName: '&eSaat'
+      Makas:
+        material: SHEARS
+        displayName: '&eMakas'
+      IsimEtiketi:
+        material: NAME_TAG
+        displayName: '&eIsim Etiketi'
+      FNS:
+        material: FLINT_AND_STEEL
+        displayName: '&eÇakmaktaşı ve Çelik'
+      Yay:
+        material: BOW
+        displayName: '&eYay'
+      Ok:
+        material: ARROW
+        displayName: '&eOk'
+      Merdiven:
+        material: LADDER
+        displayName: '&eMerdiven'
+      Mesale:
+        material: TORCH
+        displayName: '&eMeşale'
+      Tabela:
+        material: OAK_SIGN
+        displayName: '&eTabela'
+      EsyaCercevesi:
+        material: ITEM_FRAME
+        displayName: '&eEşya Çerçevesi'
+      BalcikTopu:
+        material: SLIME_BALL
+        displayName: '&eBalçık Topu'
+      WitherKafa:
+        material: WITHER_SKELETON_SKULL
+        displayName: '&eWither Kafası'
+      DrKafa:
+        material: DRAGON_HEAD
+        displayName: '&eEjderha Kafası'
+      Kayis:
+        material: LEAD
+        displayName: '&eKayış'
+confirmation:
+  yesItem:
+    slot: 11
+    material: LIME_WOOL
+    name: '&aKabul Et'
+    lore:
+    - ''
+    - ' &8▪ &7İşlemi onayla!'
+  noItem:
+    slot: 15
+    material: RED_WOOL
+    name: '&4Reddet'
+    lore:
+    - ''
+    - ' &8▪ &7İşlemi iptal et!'
+  fill:
+    material: gray_stained_glass_pane
+npc:
+  id: 0
 </details>
 
 <details>
@@ -1978,25 +2116,14 @@ Görevli bir NPC ile çalışan bu eklenti oyuncuların kendi eşyalarını diğ
 + **/tüccar ürünlerim** - Oyuncunun tüccarda listelediği ürünleri listeler.
 + **/tüccar reload** - Config ve dil dosyasını yeniden yükler.
 
-## Resimler
-TODO
+
+
 
 ## Kullanılan Kütüphaneler
 
-* [spigot-api (1.19-R0.3-SNAPSHOT)](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse)
+* [spigot-api (1.20-R1.3-SNAPSHOT)](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/spigot/browse)
 * [lombok (LATEST)](https://github.com/projectlombok/lombok)
 * [BStats](https://bstats.org)
 * [Vault](https://www.spigotmc.org/resources/vault.34315/)
 * [JSON](https://mvnrepository.com/artifact/org.json/json)
-* [Citizens](https://wiki.citizensnpcs.co/Citizens_Wiki)
-
-## Contributing
-
-We welcome contributions from the community! If you would like to contribute, please follow these guidelines:
-
-1. Fork the repository and clone it to your local machine.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes, and ensure that your code is well-tested.
-4. Create a pull request with a detailed description of your changes.
-
-By contributing to this project, you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
+* [Citizens](https://wiki.citizensnpcs.co/API)
